@@ -1,3 +1,3 @@
-## Java Technical Interview Questions
+# Java Technical Interview Questions
 
-# Core Java Concepts :
+## Core Java Concepts :
