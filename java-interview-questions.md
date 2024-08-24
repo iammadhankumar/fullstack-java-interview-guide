@@ -42,7 +42,34 @@ Garbage collection is the process of automatically finding and removing unused o
 #### 5. What part of memory Stack or Heap is cleaned in the garbage collection process ?
 Garbage collection cleans up memory in the heap. It removes objects that are no longer being used, freeing up space.
 
+#### 6. What are the different access specifiers used in Java ?
+<b>Public:</b> `public` modifier makes class members accessible from any other class.</br>
+<b>Private:</b> `private` modifier makes class members accessible only with in the same class.</br>
+<b>Protected:</b> `protected ` modifier makes class members accessible within the same package and by subclasses.</br>
+<b>default(no specifier):</b> `default` or `no access specifier` makes class members accessible only within the same package.
+
+#### 6. What is diamond problem in java ?
+The diamond problem happens when a class inherits from two classes that share a common parent class, leading confusion which will be the parent class. So java avoids this issue by not supporting multiple inheritance with classes. This is called diamond problem.
+
+#### 7. What is a Marker interface in Java ?
+A marker interface in Java is an empty interface with no methods. It is used to mark a class with a specific property or behavior.</br>
+<b>Serializable:</b> `Serializable` is a marker interface that indicates an object can be serialized.</br>
+<b>Cloneable:</b> `clonable` is a marker interface that indicates an object can be cloned.
+
 ### Object-Oriented Programming
+#### 1. What are the Object Oriented Features supported by Java ?
+<b>Encapsulation:</b> Encapsulation involves combining both data (variables) and methods into a single unit (class). It hides class variables from other classes and allows access through the class's methods. </br>
+
+<b>Inheritance:</b> Inheritance allows one class to inherit fields and methods from another class. The class that inherits is called the subclass, and the class being inherited from is called the parent class. The extends keyword is used to indicate that one class is inheriting from another. </br>
+
+<b>Polymorphism:</b>  polymorphism allows a parent class reference to access both methods and fields (members) of its subclasses. It achieves method overriding,  where both the parent and child classes have a method with the same name and parameters.</br>
+
+   &nbsp; &nbsp; &nbsp;  <b>i) Compile-time polymorphism (method overloading):</b> Same method name with different parameters, decided during compile time.</br>
+   &nbsp; &nbsp; &nbsp; <b>ii) Runtime polymorphism (method overriding):</b> Subclass method overrides parent class method, decided during runtime. </br>
+   
+<b>Abstraction:</b> Abstraction in Java is the concept of hiding internal implementation details and showing only essential features to the user. In Java, abstraction is achieved by creating abstract classes and interfaces.
+
+<b>Class & Objects:</b> A class is a blueprint for creating objects, defining their characteristics and attributes. It can contain fields, methods, constructors, and interfaces. An object is an instance of a class and is used to access the members of that class.
 
 
 
