@@ -11,3 +11,8 @@ The JDK (Java Development Kit) is a development platform for developing and runn
 The JRE (Java Runtime Environment) is a part of JDK. It is a software layer for running the Java programs. It includes everything needed to run Java applications such as the JVM (Java Virtual Machine) and libraries.
 
 The JVM (Java Virtual Machine) is a virtual machine that executes Java programs by running bytecode instructions. It converts bytecode into native machine code, allowing the program to run on various operating systems.
+
+#### 2. Why is Java a platform independent language ?
+Java is platform-independent because it compiles Java code into bytecode. The JVM then converts this bytecode into machine-readable code and allowing Java to run on various operating systems.
+
+
