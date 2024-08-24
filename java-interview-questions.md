@@ -26,10 +26,8 @@ Stack memory stores temporary data like method calls and local variables.
 Heap memory stores objects and dynamic data such as arrays and lists.
 
 #### 2. What is the difference between final, finally, and finalize ?
-<b>final:</b> final keyword is used to declare constants, methods and class and it prevents changes to constants, method overriding and inheritance.
-
-<b>finally:<b> finally block used to execute code after a try-catch block, no matter if an exception occurs or not.
-
+<b>final:</b> final keyword is used to declare constants, methods and class and it prevents changes to constants, method overriding and inheritance.<br>
+<b>finally:</b> finally block used to execute code after a try-catch block, no matter if an exception occurs or not. </br>
 <b>finalize:</b> finalize is a method called by the garbage collector before an unused objects is removed from memory.
 
 #### 3. What is garbage collection ?
