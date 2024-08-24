@@ -71,5 +71,7 @@ A marker interface in Java is an empty interface with no methods. It is used to 
 
 <b>Class & Objects:</b> A class is a blueprint for creating objects, defining their characteristics and attributes. It can contain fields, methods, constructors, and interfaces. An object is an instance of a class and is used to access the members of that class.
 
+#### 2. What is abstract class ?
+An abstract class is a class that cannot be instantiated directly. Its members can be accessed by extending it in another class. It can have method without implentation like interface and with implementations.
 
 
