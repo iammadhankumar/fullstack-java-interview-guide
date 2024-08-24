@@ -15,10 +15,10 @@ The JVM (Java Virtual Machine) is a virtual machine that executes Java programs 
 #### 2. Why is Java a platform independent language ?
 Java is platform-independent because it compiles Java code into bytecode. The JVM then converts this bytecode into machine-readable code and allowing Java to run on various operating systems.
 
-### 3. Explain java compiler ?
+#### 3. Explain java compiler ?
 The Java compiler converts Java code into bytecode, and this bytecode can be executed by any device with a JVM.
 
-### 4. What is JIT compiler ?
+#### 4. What is JIT compiler ?
 The JIT (Just-In-Time) compiler is a part of the JVM that converts bytecode into machine readable code. This helps Java applications run faster in various devices.
 
 
