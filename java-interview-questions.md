@@ -30,8 +30,7 @@ Heap memory stores objects and dynamic data such as arrays and lists.
 
 <b>finally:<b> finally block used to execute code after a try-catch block, no matter if an exception occurs or not.
 
-<b>finalize:</b>
-finalize is a method called by the garbage collector before an unused objects is removed from memory.
+<b>finalize:</b> finalize is a method called by the garbage collector before an unused objects is removed from memory.
 
 #### 3. What is garbage collection ?
 Garbage collection is the process of automatically finding and removing unused objects in memory to free up space and improve performance. In Java, garbage collection is supported by default, so we don't need to manage it manually.
