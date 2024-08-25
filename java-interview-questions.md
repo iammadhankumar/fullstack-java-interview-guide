@@ -214,6 +214,13 @@ A thread pool is a collection of reusable threads that are used to perform tasks
 <b>newCachedThreadPool():</b> creates a thread pool with a flexible number of threads, reusing idle threads and creating new ones as needed.</br>
 <b>newSingleThreadExecutor():</b> The method creates a new thread.
 
+#### 17. Explain the concepts of livelock and starvation ?
+`Livelock` occurs when two or more threads keep responding to each other without making any progress. Proper synchronization helps to overcome livelock issues. </br>
+`Starvation` happens when a thread keeps getting skipped or ignored, so it never gets a chance to run because other threads are always given priority. Proper priority strategies helps to overcome starvation issues. 
+
+#### 18. What is the java.util.concurrent package ?
+The `java.util.concurrent` package in Java offers tools to manage tasks that run in multiple threads. It includes helpful features like thread pools, locks, and other utilities to make writing multithreaded programs easier and safer.
+
 
 
 
