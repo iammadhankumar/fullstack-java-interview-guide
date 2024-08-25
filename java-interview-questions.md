@@ -123,6 +123,29 @@ A `constructor` is a special block of code that runs when an object is created. 
 A `method` is a regular function defined in a class that performs actions or calculations, It can be called by using the object of the class and mostly it can return value except void method.
 
 ### Exception Handling :
+#### 1. What is exception ?
+An exception in Java is an error that disrupts the normal flow of the program. Its like problem that stops the program from working correctly.
+
+#### 2. What is exception handling ?
+Exception handling is a way to manage errors that occur during a program’s execution. In Java we can use, try catch blocks to catch and handle exceptions, allowing the program to continue running smoothly even if something goes wrong.
+
+#### 3. What is the difference between checked and unchecked exceptions ?
+Checked exceptions are errors that must be handled explicitly in the code at a compile time. Ex. IOException </br>
+Unchecked exceptions are runtime errors. Ex. NullPointerException, ArrayIndexOutOfBoundsException
+
+#### 4. What is the use of try-catch block in Java ?
+The `try-catch` block is used to handle exceptions in Java. The try block contains code that might cause an error, and the catch block contains code to handle that error if it happens. This prevents the program from crashing and allows to run smoothly.
+
+#### 5. What is the difference between throw and throws ?
+`throw` is used to manually trigger an exception within a method. </br>
+`throws` is used in a method declaration to specify that the method can throw certain exceptions, which need to be handled by the calling code.
+
+#### 6. What is the use of the finally block ?
+The `finally` block in Java is used to ensure that certain code runs no matter what, whether an exception occurs or not. It's typically used for cleanup activities, like closing files or releasing resources.
+
+#### 7. What's the base class of all exception classes ?
+The base class of all exception classes in Java is Throwable
+
 
 
 
