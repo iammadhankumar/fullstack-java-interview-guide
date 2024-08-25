@@ -56,6 +56,12 @@ Garbage collection is the process of automatically finding and removing unused o
 #### 4. What part of memory Stack or Heap is cleaned in the garbage collection process ?
 Garbage collection cleans up memory in the heap. It removes objects that are no longer being used, freeing up space.
 
+#### 5. Why are strings immutable in Java ?
+Strings in Java are immutable, which means once a string is created, its value cannot be changed. When you modify a string, such as by concatenating it with another string, a new string object is created instead of changing the original one. This immutability ensures safety and consistency. Java uses a string pool to store strings, and if a string with the same value already exists in the pool, it reuses that existing string. Allowing changes to string values could lead to unexpected behavior in the application, so immutability helps prevent these issues.
+
+#### 6. What is String pool ?
+The string pool in Java is a special area of memory where unique string values are stored. When a new string is created, Java first checks this pool to see if an same string already exists. If it does, Java reuses the existing string from the pool, which helps save memory and improve performance.
+
 ### Object-Oriented Programming
 #### 1. What are the Object Oriented Features supported by Java ?
 <b>Encapsulation:</b> Encapsulation involves combining both data (variables) and methods into a single unit (class). It hides class variables from other classes and allows access through the class's methods. </br>
