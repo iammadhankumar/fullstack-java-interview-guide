@@ -71,7 +71,46 @@ A marker interface in Java is an empty interface with no methods. It is used to 
 
 <b>Class & Objects:</b> A class is a blueprint for creating objects, defining their characteristics and attributes. It can contain fields, methods, constructors, and interfaces. An object is an instance of a class and is used to access the members of that class.
 
-#### 2. What is abstract class ?
+#### 2. What is abstract class in java ?
 An abstract class is a class that cannot be instantiated directly. Its members can be accessed by extending it in another class. It can have method without implentation like interface and with implementations.
+
+#### 3. What is the purpose of an abstract class ?
+The purpose of an abstract class is to provide a base class for other classes, It can define common features and methods that other class can inherit.
+It can have both abstract methods and regular methods. We can override these methods in subclasses.
+
+#### 4. What is interface in java ?
+An interface in Java is a mechanism to achieve abstraction. It can contain a collection of abstract methods that must be implemented by a class using the implements keyword. 
+
+#### 5. Why java doesn't support multiple inhertance ?
+Multiple inheritance means a class inherits from two or more classes, which can lead to conflicts about which parent class's methods to use. That's why Java doesn't support multiple inheritance. Instead, Java uses interfaces, allowing a class to implement multiple interfaces without conflicts.
+
+#### 6. What is constructor in java ?
+A constructor is used to create and initialize objects. It has the same name as the class and is called automatically when an object is created.
+
+#### 6. What is constructor overloading in java ?
+Constructor overloading in Java means having multiple constructors in a class with different parameters.  It allows creating objects in different ways, depending on the arguments provided.
+
+#### 7. What is the use of super keyword in Java ?
+The `super` keyword in Java is used to refer to the parent class's methods and constructors. It allows you to access or override methods and constructors from the parent class.
+
+#### 8. What is the difference between method overloading and method overriding ?
+`Method overloading` is when multiple methods in the same class have the same name but different parameters.</br>
+`Method overriding` is when a subclass provides a new implementation for a method that is already defined in its parent class.
+
+#### 9. What is the difference between static methods, static variables, and static classes in Java ?
+`Static methods` and `static variables belong` to the class itself rather than to objects. They can be accessed using class name directly without creating an instance of the class.</br>
+In Java, a top-level class cannot be static. Only nested (inner) classes can be declared static, and these must be accessed through an instance of the outer class.
+
+#### 10. Why aren't classes typically declared as static in Java ?
+In Java, the keyword `static` is used to define features that belong to a class. `static` members can be accessed directly using class name without creating objects. So concept of static does not apply to top-level classes and it belongs to the class.
+
+#### 11. What is the difference between composition and inheritance ?
+`Composition ("has-a" relationship)` means that one class contains an object of another class as a member and representing has-a relationship. </br>
+`inheritance ("is-a" relationship)` ` means one class is inherited from another class and representing is-a relationship.
+
+#### 12. Difference between instance variable and local variables ?
+Instance variables are declared inside a class but outside methods,and they belong to an object of the class. They can be accessed and modified by any method in the class. </br>
+Local variables are declared inside a method or block are accessible only with in the block.
+
 
 
