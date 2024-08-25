@@ -112,5 +112,9 @@ In Java, the keyword `static` is used to define features that belong to a class.
 Instance variables are declared inside a class but outside methods,and they belong to an object of the class. They can be accessed and modified by any method in the class. </br>
 Local variables are declared inside a method or block are accessible only with in the block.
 
+#### 13. Difference between constructor and method ?
+A `constructor` is a special block of code that runs when an object is created. Its main purpose is to create and initialize the object. It has the same name as the class and does not have a return type. </br>
+A `method` is a regular function defined in a class that performs actions or calculations, It can be called by using the object of the class and mostly it can return value except void method.
+
 
 
