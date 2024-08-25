@@ -208,6 +208,12 @@ The lifecycle of a thread includes several stages:</br>
 <b>Waiting:</b> The thread is waiting indefinitely for another thread to perform an action.</br>
 <b>Terminated:</b> The thread has completed its task or has been terminated.
 
+#### 16. What is thread pool ?
+A thread pool is a collection of reusable threads that are used to perform tasks. Instead of creating new threads every time for a simple tasks we can reuse the threads in thread pool. This improves the performance and efficiency. </br> </br>
+<b>newFixedThreadPool(int s):</b> The method creates a thread pool of the fixed size s.</br>
+<b>newCachedThreadPool():</b> creates a thread pool with a flexible number of threads, reusing idle threads and creating new ones as needed.</br>
+<b>newSingleThreadExecutor():</b> The method creates a new thread.
+
 
 
 
