@@ -221,6 +221,15 @@ A thread pool is a collection of reusable threads that are used to perform tasks
 #### 18. What is the java.util.concurrent package ?
 The `java.util.concurrent` package in Java offers tools to manage tasks that run in multiple threads. It includes helpful features like thread pools, locks, and other utilities to make writing multithreaded programs easier and safer.
 
+#### 19. What is lock ?
+A lock is a tool that ensures only one thread can access a resource at a time, preventing conflicts.
+
+#### 20. What is ReentrantLock and ReentrantReadWriteLock ?
+ReentrantLock is a class that implemented lock interface to provide syncronization, It allows the same thread to acquire the lock multiple times without getting stuck.
+
+#### 21. What is the difference between synchronized and Lock interface ?
+
+
 
 
 
