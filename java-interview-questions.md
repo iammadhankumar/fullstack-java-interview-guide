@@ -144,7 +144,78 @@ The `try-catch` block is used to handle exceptions in Java. The try block contai
 The `finally` block in Java is used to ensure that certain code runs no matter what, whether an exception occurs or not. It's typically used for cleanup activities, like closing files or releasing resources.
 
 #### 7. What's the base class of all exception classes ?
-The base class of all exception classes in Java is Throwable
+The base class of all exception classes in Java is Throwable.
+
+### Multithreading :
+
+#### 1. What is a thread and what are the different stages in its lifecycle ?
+A thread in Java is a small unit of a process that runs independently within a program, allowing multiple tasks to be performed at the same time.
+
+#### 2. What is the difference between process and thread ?
+A process is an independent program with its own memory space, while a thread is a smaller execution unit within a process.
+
+#### 3. What are the different types of thread priorities available in Java ?
+In Java, threads can have three priority levels: </br>
+<b>Low (MIN_PRIORITY):</b> Priority level 1.</br>
+<b>Normal (NORM_PRIORITY):</b> Priority level 5, which is the default.</br>
+<b>High (MAX_PRIORITY):</b> Priority level 10.</br>
+Threads with higher priority run before lower-priority threads.
+
+#### 4. What is the difference between user threads and Daemon threads ?
+User threads are the main threads running tasks, while daemon threads run in the background and stop when the main program ends.
+
+#### 5. What is synchronization ?
+Synchronization ensures that only one thread can execute a at a time, It prevent issues like race conditions and data corruption when multiple threads executed at a time.
+
+#### 6. What is race condition ?
+A race condition happens when two or more threads run at the same time and try to use the same data. This can lead to unexpected behavior or errors.
+
+#### 7. What is a deadlock ?
+A deadlock occurs when two or more threads are stuck waiting for each other to complete their tasks, keeping all threads in a waiting state.
+
+#### 8. What is the use of the wait() and notify() methods ?
+`wait()` makes a thread stop and release its lock, waiting for another thread to signal it to continue. </br>
+`notify()` wakes up a thread that is waiting, allowing it to resume work.
+
+#### 9. What is the difference between synchronized and volatile in Java ?
+`synchronized` allows only one thread to run a block of code at a time to avoid conflicts.</br>
+`volatile` keyword in Java is used to indicate that a variable's value can be modified by different threads.
+
+#### 10. What is the purpose of the sleep() method in Java ?
+The `sleep()` method in Java pauses a thread for a specified amount of time, temporarily stopping its execution.
+
+#### 11. What is the difference between wait() and sleep() in Java ?
+`wait()` method is used to pause a thread until another thread notifies it to continue. It must be called from within a synchronized block or method.</br>
+`sleep()` simply pauses a thread for a specified amount of time.
+
+#### 12. What is the difference between notify() and notifyAll() in Java ?
+`notify()` wakes up one waiting thread.
+`notifyAll()` wakes up all waiting threads.
+
+#### 13. What are the differences between Thread class and Runnable interface ?
+Both used to create threads in java. </br>
+<b>Thread Class:</b> This class is used to define and run a thread by extending it and overriding the run() method.</br>
+<b>Runnable Interface:</b> This interface is used to define a run method by implementing it. Then use it with a Thread object to start the thread. 
+
+#### 14. How do you start a thread ?
+To start a thread, create an instance of the Thread class or a class that implements Runnable interface, then call the start() method. This tells the thread to begin executing the run() method in the background.
+
+#### 15. What is lifecycle of a thread ?
+The lifecycle of a thread includes several stages:</br>
+<b>New:</b> The thread is created but not started yet.</br>
+<b>Runnable:</b> The thread is ready to run and waiting for CPU time.</br>
+<b>Blocked:</b> The thread is waiting for a resource to become available.</br>
+<b>Waiting:<b> The thread is waiting indefinitely for another thread to perform an action.</br>
+<b>Terminated:</b> The thread has completed its task or has been stopped.
+
+
+
+
+
+
+
+
+
 
 
 
