@@ -205,7 +205,7 @@ The lifecycle of a thread includes several stages:</br>
 <b>New:</b> The thread is created but not started yet.</br>
 <b>Runnable:</b> The thread is ready to run and waiting for CPU time.</br>
 <b>Blocked:</b> The thread is waiting for a resource to become available.</br>
-<b>Waiting:<b> The thread is waiting indefinitely for another thread to perform an action.</br>
+<b>Waiting:</b> The thread is waiting indefinitely for another thread to perform an action.</br>
 <b>Terminated:</b> The thread has completed its task or has been stopped.
 
 
