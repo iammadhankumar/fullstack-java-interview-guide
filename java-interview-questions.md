@@ -62,7 +62,7 @@ Strings in Java are immutable, which means once a string is created, its value c
 #### 6. What is String pool ?
 The string pool in Java is a special area of memory where unique string values are stored. When a new string is created, Java first checks this pool to see if an same string already exists. If it does, Java reuses the existing string from the pool, which helps save memory and improve performance.
 
-### Object-Oriented Programming
+### Object-Oriented Programming :
 #### 1. What are the Object Oriented Features supported by Java ?
 <b>Encapsulation:</b> Encapsulation involves combining both data (variables) and methods into a single unit (class). It hides class variables from other classes and allows access through the class's methods. </br>
 
@@ -121,6 +121,8 @@ Local variables are declared inside a method or block are accessible only with i
 #### 13. Difference between constructor and method ?
 A `constructor` is a special block of code that runs when an object is created. Its main purpose is to create and initialize the object. It has the same name as the class and does not have a return type. </br>
 A `method` is a regular function defined in a class that performs actions or calculations, It can be called by using the object of the class and mostly it can return value except void method.
+
+### Exception Handling :
 
 
 
