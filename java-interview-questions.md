@@ -20,27 +20,11 @@ The Java compiler converts Java code into bytecode, and this bytecode can be exe
 #### 4. What is JIT compiler ?
 The JIT (Just-In-Time) compiler is a part of the JVM that converts bytecode into machine readable code. This helps Java applications run faster in various devices.
 
-### Java Basic Questions :
-#### 1. What is the difference between stack and heap memory ?
-Stack memory stores temporary data like method calls and local variables. 
-Heap memory stores objects and dynamic data such as arrays and lists.
-
-#### 2. What is the difference between final, finally, and finalize ?
-<b>final:</b> final keyword is used to declare constants, methods and class and it prevents changes to constants, method overriding and inheritance.</br>
-<b>finally:</b> finally block used to execute code after a try-catch block, no matter if an exception occurs or not. </br>
-<b>finalize:</b> finalize is a method called by the garbage collector before an unused objects is removed from memory.
-
-#### 3. What is garbage collection ?
-Garbage collection is the process of automatically finding and removing unused objects in memory to free up space and improve performance. In Java, garbage collection is supported by default, so we don't need to manage it manually.
-
-#### 4. What exactly is System.out.println in Java ?
+#### 5. What exactly is System.out.println in Java ?
 `System.out.println` is a method. It’s used to print text or variables to the console. <br>
 -`System` is a class present in the `java.lang` package.<br>
 -`out` is the static variable of PrintStream class that present in the System class.<br>
 -`println` is the method present in the PrintStream class.
-
-#### 5. What part of memory Stack or Heap is cleaned in the garbage collection process ?
-Garbage collection cleans up memory in the heap. It removes objects that are no longer being used, freeing up space.
 
 #### 6. What are the different access specifiers used in Java ?
 <b>Public:</b> `public` modifier makes class members accessible from any other class.</br>
@@ -55,6 +39,22 @@ The diamond problem happens when a class inherits from two classes that share a 
 A marker interface in Java is an empty interface with no methods. It is used to mark a class with a specific property or behavior.</br>
 <b>Serializable:</b> `Serializable` is a marker interface that indicates an object can be serialized.</br>
 <b>Cloneable:</b> `clonable` is a marker interface that indicates an object can be cloned.
+
+### Java Memory Management :
+#### 1. What is the difference between stack and heap memory ?
+Stack memory stores temporary data like method calls and local variables. 
+Heap memory stores objects and dynamic data such as arrays and lists.
+
+#### 2. What is the difference between final, finally, and finalize ?
+<b>final:</b> final keyword is used to declare constants, methods and class and it prevents changes to constants, method overriding and inheritance.</br>
+<b>finally:</b> finally block used to execute code after a try-catch block, no matter if an exception occurs or not. </br>
+<b>finalize:</b> finalize is a method called by the garbage collector before an unused objects is removed from memory.
+
+#### 3. What is garbage collection ?
+Garbage collection is the process of automatically finding and removing unused objects in memory to free up space and improve performance. In Java, garbage collection is supported by default, so we don't need to manage it manually.
+
+#### 4. What part of memory Stack or Heap is cleaned in the garbage collection process ?
+Garbage collection cleans up memory in the heap. It removes objects that are no longer being used, freeing up space.
 
 ### Object-Oriented Programming
 #### 1. What are the Object Oriented Features supported by Java ?
@@ -115,6 +115,9 @@ Local variables are declared inside a method or block are accessible only with i
 #### 13. Difference between constructor and method ?
 A `constructor` is a special block of code that runs when an object is created. Its main purpose is to create and initialize the object. It has the same name as the class and does not have a return type. </br>
 A `method` is a regular function defined in a class that performs actions or calculations, It can be called by using the object of the class and mostly it can return value except void method.
+
+
+
 
 
 
