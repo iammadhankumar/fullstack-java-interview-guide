@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Fullstack Interview Guide</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .title {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .title h1 {
+            font-size: 2em;
+            color: #333;
+        }
+        .tabs-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+        .tab {
+            background-color: #ffffff;
+            border: 2px solid #007bff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            padding: 15px;
+            text-align: center;
+            cursor: pointer;
+            transition: background-color 0.3s, border-color 0.3s;
+            flex: 1 1 calc(33.333% - 20px); /* Adjusts for 3 items per row */
+            max-width: calc(33.333% - 20px); /* Ensures no overflow */
+        }
+        .tab:hover {
+            background-color: #007bff;
+            color: #ffffff;
+            border-color: #0056b3;
+        }
+        .tab span {
+            font-weight: bold;
+        }
+        .content {
+            display: none;
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .content .markdown-body {
+            max-width: 100%;
+            word-wrap: break-word;
+        }
+        @media (max-width: 768px) {
+            .tab {
+                flex: 1 1 calc(50% - 20px); /* 2 items per row on medium screens */
+                max-width: calc(50% - 20px);
+            }
+        }
+        @media (max-width: 480px) {
+            .tab {
+                flex: 1 1 100%; /* 1 item per row on small screens */
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="title">
+            <h1>Java Fullstack Interview Guide</h1>
+        </div>
+        <div class="tabs-container">
+            <div class="tab" onclick="loadMarkdown('https://raw.githubusercontent.com/iammadhankumar/fullstack-java-interview-guide/main/java-interview-questions.md')">
+                <span>Core Java Interview Questions</span>
+            </div>
+            <div class="tab" onclick="loadMarkdown('https://raw.githubusercontent.com/iammadhankumar/fullstack-java-interview-guide/main/collections-interview-questions.md')">
+                <span>Collections Interview Questions</span>
+            </div>
+            <div class="tab" onclick="loadMarkdown('https://raw.githubusercontent.com/your-repo/file3.md')">
+                <span>Spring Boot Interview questions</span>
+            </div>
+            <!-- Add more tabs as needed -->
+        </div>
+        <div class="content" id="content">
+            <div id="markdown-content" class="markdown-body"></div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script>
+        function loadMarkdown(url) {
+            fetch(url)
+                .then(response => response.text())
+                .then(text => {
+                    document.getElementById('markdown-content').innerHTML = marked.parse(text);
+                    document.getElementById('content').style.display = 'block';
+                })
+                .catch(error => console.error('Error fetching Markdown file:', error));
+        }
+    </script>
+</body>
+</html>
