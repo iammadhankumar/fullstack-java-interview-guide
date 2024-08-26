@@ -51,3 +51,7 @@ The `Comparable` interface in Java is used to define a natural order of sorting 
 
 #### 15.  What is a Comparator interface ?
 The `Comparator` interface in Java is used to define a custom order for sorting objects. It uses the `compare` method to compare objects and determine their order.
+
+#### 16. How to make ArrayList Read Only ?
+To make an ArrayList read-only in Java, We can use `Collections.unmodifiableList()` to wrap the list. This creates a view of the list that prevents modifications, ensuring it can be read only.
+
