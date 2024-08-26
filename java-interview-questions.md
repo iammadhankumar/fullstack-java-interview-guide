@@ -122,6 +122,56 @@ Local variables are declared inside a method or block are accessible only with i
 A `constructor` is a special block of code that runs when an object is created. Its main purpose is to create and initialize the object. It has the same name as the class and does not have a return type. </br>
 A `method` is a regular function defined in a class that performs actions or calculations, It can be called by using the object of the class and mostly it can return value except void method.
 
+### Java 8 Features :
+#### 1. What are the key features introduced in Java 8 ?
+Java 8 introduced several key features: </br>
+Lambda Expressions, Functional Interfaces, Method References, Stream API, Optional Class, New Date-Time API, ForEach() method, default and static methods, Collectors class.
+
+#### 2. What is Lambda Expressions ?
+Lambda expression is a important feature of Java which was included in Java SE 8. It provides a clear and concise way to represent one method interface using an expression. It is very useful in collection library. It helps to iterate, filter and extract data from collection.
+
+<b>Without Lambda:</b> </br>
+```java
+Runnable r = new Runnable() {</br>
+    @Override</br>
+    public void run() {</br>
+        System.out.println("Hello, World!");</br>
+    }</br>
+};
+```
+
+<b>With Lambda:</b></br>
+```java
+Runnable r = () -> System.out.println("Hello, World!");</br>
+```
+The lambda () -> System.out.println("Hello, World!") simplifies the code to just one line.
+
+#### 3. What is Functional Interfaces ?
+Functional interfaces are interfaces with just one abstract method. They can be implemented using lambda expressions or method references.</br>
+For example, `Runnable` is a functional interface because it has only one method `run()`.
+
+#### 4. What is Method References ?
+Method references are a simple way to use existing methods with lambda expressions. A method can be referred to directly by using the class name, which simplifies the code. </br> For example, `String::toLowerCase` directly uses the `toLowerCase` method of the String class.
+
+#### 5. Explain about Stream API ?
+The Stream API in Java is used to process collections of data. It allows filtering, mapping, and combining data in a simple and readable way. Streams can handle large amounts of data efficiently and support parallel processing.
+
+#### 6. Explain about Optional class ?
+Optional is a class that may or may not hold a value. It helps avoid NullPointerException by providing methods to check if a value is present. It handles null cases more safely and clearly.
+
+#### 7. Explain about new Date-Time API ?
+The new Date-Time API in Java simplifies working with dates and times. It is part of the java.time package and makes it easier to handle time zones and perform calculations.
+
+#### 8. What is forEach method in Java ?
+The forEach() method is used to iterate over elements in a collection or stream. It was introduced in Java 8 as part of the Stream API and performs an action on each item in the collection or stream.
+
+#### 9. What default and static methods in interfaces ?
+`Default methods` in interfaces provide a default implementation that can be implemented by classes.</br>
+`Static method`s belong to the interface itself and can be called without creating an instance.
+
+#### 10. What is Collectors class in the Stream API ?
+The Collectors class in the Stream API helps to collect results from a stream into different forms like lists, sets and maps.
+
 ### Exception Handling :
 #### 1. What is exception ?
 An exception in Java is an error that disrupts the normal flow of the program. Its like problem that stops the program from working correctly.
