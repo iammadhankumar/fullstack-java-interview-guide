@@ -224,10 +224,16 @@ The `java.util.concurrent` package in Java offers tools to manage tasks that run
 #### 19. What is lock ?
 A lock is a tool that ensures only one thread can access a resource at a time, preventing conflicts.
 
-#### 20. What is ReentrantLock and ReentrantReadWriteLock ?
-ReentrantLock is a class that implemented lock interface to provide syncronization, It allows the same thread to acquire the lock multiple times without getting stuck.
+#### 20. What is the difference between synchronized and Lock interface ?
+`synchronized` locks the whole method or block of code. This means that when one thread is using a synchronized method or block, other threads have to wait until the first thread is done. It provides less control.</br>
+'Lock` locks the specific sections of the code as needed. This can help improve performance in some cases.
 
-#### 21. What is the difference between synchronized and Lock interface ?
+#### 21. What is ReentrantLock and ReentrantReadWriteLock ?
+`ReentrantLock` is a class that implemented lock interface to provide syncronization, It allows the same thread to acquire the lock multiple times without getting stuck. </br>
+`ReentrantReadWriteLock` is a special type of lock that allows multiple threads to read a resource at the same time but only one thread to write. 
+
+
+
 
 
 
