@@ -282,6 +282,8 @@ A lock is a tool that ensures only one thread can access a resource at a time, p
 `ReentrantLock` is a class that implemented lock interface to provide syncronization, It allows the same thread to acquire the lock multiple times without getting stuck. </br>
 `ReentrantReadWriteLock` is a special type of lock that allows multiple threads to read a resource at the same time but only one thread to write. 
 
+#### 22. What is BlockingQueue ?
+A `BlockingQueue` in Java is a queue where threads can wait if it’s full or empty. Threads are blocked until space becomes available for adding elements or retrieving elements in the queue.
 
 
 
