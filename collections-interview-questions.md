@@ -55,3 +55,27 @@ The `Comparator` interface in Java is used to define a custom order for sorting 
 #### 16. How to make ArrayList Read Only ?
 To make an ArrayList read-only in Java, We can use `Collections.unmodifiableList()` to wrap the list. This creates a view of the list that prevents modifications, ensuring it can be read only.
 
+#### 17. What is Iterator ?
+An `Iterator` is an object in Java used to iterate over elements in a collection. It moves through the elements in a forward direction and provides methods like `next()` and `hasNext()`.</br></br>
+`next()` is used to get the next element in the collection.</br>
+`hasNext()` is used to check if there are more elements in the collection.
+
+#### 18. What is ListIterator ?
+A ListIterator is a special type of iterator in Java used to iterate over elements in a collection. It lets you go through the both forword and backward directions and provide additional methods like `previous` and `hashPrevious`.</br></br>
+`previous()` is used to get the previous element in the collection.</br>
+`hasPrevious()` is used to check if there are more elements in the collection.
+
+#### 19. Explain the ConcurrentHashMap ?
+`ConcurrentHashMap` is a thread-safe map in Java that allows multiple threads to access and modify the map concurrently without causing conflicts. It is designed to use handle multithread environments to provide better performance. `ConcurrentHashMap` works by dividing the map into smaller segments. Each segment can be accessed and modified independently by different threads.
+
+#### 20. How to synchronize ArrayList ?
+A synchronized ArrayList is a thread-safe ArrayList. It ensures that multiple threads can access and modify the list safely without causing conflicts.
+We can synchronize ArrayList in two ways.</br>
+i) Using Collections.synchronizedList() method </br>
+ii) Using CopyOnWriteArrayList<T>
+
+
+
+
+
+
