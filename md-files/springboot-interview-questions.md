@@ -15,7 +15,7 @@ Auto-configuration, Embedded servers, Starter dependencies.
 <b>Auto Configuration:</b> Spring Boot automatically configures the application based on the dependencies added, reducing the need for manual configuration.</br>
 <b>Embedded Servers:</b>It includes built-in servers like tomcat, there is no need to use external servers to run the application. </br>
 <b>Starter Dependencies:</b>Spring Boot provides starter dependencies that bundle common libraries and configurations for various functionalities.</br>
-<b>Production-ready features:</b>Spring Boot includes features like Actuator for monitoring and managing the application, and Spring Security for securing the application.
+<b>Production-ready features:</b> Spring Boot includes features like Actuator for monitoring and managing the application, and Spring Security for securing the application.
 
 
 
