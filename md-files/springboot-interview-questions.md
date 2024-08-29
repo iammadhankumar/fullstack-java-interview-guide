@@ -98,6 +98,43 @@ The `@Bean` annotation is used to indicate that a method produces a bean to be m
 #### 21. Explain about @ComponentScan annotation ?
  The `@ComponentScan` annotation is used for searching and registering classes as beans based on their package.  It searches for classes annotated with @Component, @Repository, @Service, and @Controller.
 
+#### 22. Explain about Spring security ?
+Spring Security is a framework which provides various security features like authentication, authorization to create secure Java Enterprise Applications.</br> Authentication verifies user identity, it supports various authentication mechanisms such as basic authentication, Oauth.</br>
+Authorizations gives the access to resources after successful authentication. ex. RBAC.
+
+#### 23. Explain the authentication and authorization ?
+`Authentication` in Spring Boot involves verifying a user's identity using credentials like a username and password. This is typically achieved using mechanisms like Basic Authentication, OAuth2, or JWT (JSON Web Tokens).</br>
+`Authorization` is the process of determining whether an authenticated user has the necessary permissions to access a resource or perform an action. This process is called role-based authorization.
+
+#### 24. Tell me about Role-based Access control ?
+Role-Based Access Control (RBAC) is a way to manage permissions in an application. Instead of giving permissions to each user individually, users are assigned to roles, and each role has specific permissions. For example, an `Admin` role might have access to everything, while a `User` role might only access certain features.
+
+#### 25. What is hibernate in spring boot ?
+Hibernate is a framework in Java that simplifies database interactions by mapping Java objects to database tables. It provides several features to interact with relational databases, including: </br>
+<b>ORM:</b> Maps Java objects to database tables, allowing for easy manipulation. </br>
+<b>Entity Relationships:</b> Manages complex relationships between entities (e.g., one-to-many, many-to-one).</br>
+<b>Transaction Management:</b> Handles transactions to ensure data consistency and integrity.
+
+#### 26. What is JPA ?
+JPA (Java Persistant API) is specification that provides set of rules and interfaces for managing relational database in Java applications. It supports entity manager, TypedQuery, Creteria query for mapping the java objects into database tables.
+
+#### 27. What is @Transactional annotation ?
+The `@Transactional' annotation ensures that a series of queries are completed together successfully or none at all. It helps keep data consistent by rolling back changes if an error happens.
+
+#### 28. What is microservices ?
+Microservices is an architectural style used to break down large applications into smaller, independent services. Each service has its own codebase.
+
+#### 29. What are the components of microservices ?
+<b>Services:</b> small and independent services that has to do jobs.</br>
+<b>API Gateway:</b> Handles the client request and distributes to the right services.</br>
+<b>Service Registry:</b> It stores the information about the services that is running or not.
+
+#### 30. How micro services are communicating with each other and explain it ?
+Microservices communicate with each other using several methods like RestAPI, Message queues, gRPC.
+
+#### 31. Explain about the API gateway in microservices ?
+An API gateway is a server that acts as a bridge between clients and microservices. Instead of clients communicating directly with each microservice, they send requests to the API gateway. The gateway then routes these requests to the appropriate microservice and returns the response to the client. It helps manage communication, load balancing, and security.
+
 
 
 
