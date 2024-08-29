@@ -62,6 +62,9 @@ Strings in Java are immutable, which means once a string is created, its value c
 #### 6. What is String pool ?
 The string pool in Java is a special area of memory where unique string values are stored. When a new string is created, Java first checks this pool to see if an same string already exists. If it does, Java reuses the existing string from the pool, which helps save memory and improve performance.
 
+#### 7. What is difference between `==` and `equals` ?
+`==` checks if two variables are the same object(i.e., the same memory address), while `equals()` checks if they are equal in value.
+
 ### Object-Oriented Programming :
 #### 1. What are the Object Oriented Features supported by Java ?
 <b>Encapsulation:</b> Encapsulation involves combining both data (variables) and methods into a single unit (class). It hides class variables from other classes and allows access through the class's methods. </br>
