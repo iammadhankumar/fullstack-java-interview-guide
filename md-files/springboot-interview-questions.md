@@ -53,10 +53,10 @@ No, it’s not mandatory to add Tomcat server dependency in pom.xml. Spring Boot
 
 #### 13. What are the key dependencies of spring boot ?
 The key dependencies of Spring Boot are:</br>
-<b>Spring Boot Starter Web:</b> For building web applications with RESTful APIs.</br>
-<b>Spring Boot Starter Data JPA:</b> For working with databases using JPA (Java Persistence API).</br>
-<b>Spring Boot Starter Security:</b> For adding security features to the application.</br>
-<b>Spring Boot Starter Test:</b> For testing the application.
+* <b>Spring Boot Starter Web:</b> For building web applications with RESTful APIs.</br>
+* <b>Spring Boot Starter Data JPA:</b> For working with databases using JPA (Java Persistence API).</br>
+* <b>Spring Boot Starter Security:</b> For adding security features to the application.</br>
+* <b>Spring Boot Starter Test:</b> For testing the application.
 
 #### 14. Explain about spring boot starter dependency ?
 Spring Boot starter dependencies are pre-packaged sets of libraries and configurations to set up common features in the spring boot application. </br>
@@ -81,13 +81,13 @@ It has three components - Model, View, Controller.</br>
 <b>RestController:</b> Handles web requests and returns data directly (like JSON or XML) instead of views. It’s used for building RESTful web services and APIs.
 
 #### 18. Explain some commonly used annotations in spring boot ?
-<b>@SpringBootApplication:</b> Marks the main class of a Spring Boot application and enables auto-configuration.</br>
-<b>@RestController:</b> Used for building RESTful web services. It returns data directly (like JSON) instead of views.</br>
-<b>@RequestMapping:</b> Maps web requests to specific methods in the controller.</br>
-<b>@GetMapping:</b> A shortcut for handling GET requests.</br>
-<b>@PostMapping:</b> A shortcut for handling POST requests.</br>
-<b>@Autowired:</b> Automatically injects dependencies into your class.</br>
-<b>@Service:</b> Indicates a class provides business logic and is managed by Spring.
+* <b>@SpringBootApplication:</b> Marks the main class of a Spring Boot application and enables auto-configuration.</br>
+* <b>@RestController:</b> Used for building RESTful web services. It returns data directly (like JSON) instead of views.</br>
+* <b>@RequestMapping:</b> Maps web requests to specific methods in the controller.</br>
+* <b>@GetMapping:</b> A shortcut for handling GET requests.</br>
+* <b>@PostMapping:</b> A shortcut for handling POST requests.</br>
+* <b>@Autowired:</b> Automatically injects dependencies into your class.</br>
+* <b>@Service:</b> Indicates a class provides business logic and is managed by Spring.
 
 #### 19. Explain about @Configuration annotation ?
 The `@Configuration` annotation in Spring indicates that a class provides bean definitions for the application, which are managed by the Spring IoC container. It is used to set up configurations in a Java class.
