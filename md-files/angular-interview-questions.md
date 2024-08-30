@@ -59,12 +59,12 @@ Routing in angular is used to navigate the one web page to another without requi
 * To use routing in other components, we can import the RouterModule in the app routing module and export it to other components.
   
 #### 9. What is decorators in angular ?
-Decorators are special markers of the classes and its members. They allow you to modify the behavior of a class or its members without directly modifying their source code.</br>
+Decorators are special markers of the classes and its members. They allow you to modify the behavior of a class or its members without directly modifying their source code.</br></br>
 Types of decorators :</br>
 * <b>Class Decorators:</b></br>
-  @Component: The most common decorator, used to define Angular components. It provides metadata such as the component's selector, template, styles.</br>
-  @NgModule: Used to define Angular modules, which group components, directives, pipes, and services.</br>
-  @Injectable: Marks a class as an injectable service, allowing it to be used in dependency injection.</br></br>
+@Component: The most common decorator, used to define Angular components. It provides metadata such as the component's selector, template, styles.</br>
+@NgModule: Used to define Angular modules, which group components, directives, pipes, and services.</br>
+@Injectable: Marks a class as an injectable service, allowing it to be used in dependency injection.</br></br>
 
 * <b>Property Decorators:</b></br>
 @Input: Marks a property as an input, allowing data to be passed into the component from its parent.</br>
