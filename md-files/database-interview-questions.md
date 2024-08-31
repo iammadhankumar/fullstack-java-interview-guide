@@ -19,7 +19,26 @@ NoSQL databases are designed for handling large amounts of unstructured data.  U
 Instead, they store data in various formats, like documents, key-value pairs, or graphs
 
 #### 4. What is transactions in database ?
-The transactions is series of the operations performed with in the database. All the operations must be completed successfully; if not, the transaction is rolled back to keep the database correct.
+The transactions is series of the operations performed with in the database. All the operations must be completed successfully; if not, the transaction is rolled back to keep the database correct.</br>
+```SQL
+BEGIN TRANSACTION;
+
+-- Deduct $100 from the checking account
+UPDATE accounts
+SET balance = balance - 100
+WHERE account_type = 'checking' AND account_id = 1;
+
+-- Add $100 to the savings account
+UPDATE accounts
+SET balance = balance + 100
+WHERE account_type = 'savings' AND account_id = 2;
+
+-- If both operations are successful, commit the transaction
+COMMIT;
+
+-- If something goes wrong, rollback the transaction to undo changes
+ROLLBACK;
+```
 
 #### 5. Explain about ACID property ?
 The ACID properties ensure that database transactions are processed reliably.</br>
