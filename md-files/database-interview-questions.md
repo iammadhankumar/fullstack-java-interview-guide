@@ -47,3 +47,20 @@ It is a process that removes duplicate data from relational tables.</br>
 <b>Boyce-Codd Normal Form (BCNF):</b>  column or set of columns that determines the value of another column.</br>
 <b>Fourth Normal Form (4NF):</b> Ensure that a table has no multi-valued dependencies, meaning a table should not have two or more independent sets of multi-valued data.</br>
 <b>Fifth Normal Form (5NF):</b>A table should be designed so that you can reconstruct it by joining smaller, simpler tables without losing any information.
+
+#### 6. What is indexing in SQL ?
+Indexing is a process used to speed up the retrieval of data from a database. We can do indexing for both single and multiple columns.</br>
+<b>Single Column Index:</b> `CREATE INDEX idx_column_name ON table_name (column_name);`</br>
+<b>Multi Column Index:</b> `CREATE INDEX idx_multi_column ON table_name (column1, column2);`
+
+#### 7. What is JOIN ?
+A JOIN is used to combine rows from two or more tables based on a related column between them.</br>
+* <b>INNER JOIN:</b> Returns rows where there is a match in both tables.</br>
+* <b>LEFT JOIN (or LEFT OUTER JOIN):</b> Returns all rows from the left table and matched rows from the right table. If there is no match, NULLs are returned for columns from the right table.</br>
+* <b>RIGHT JOIN (or RIGHT OUTER JOIN):</b> Returns all rows from the right table and matched rows from the left table. If there is no match, NULLs are returned for columns from the left table.</br>
+* <b>FULL JOIN (or FULL OUTER JOIN): </b> Returns all rows when there is a match in one of the tables. If there is no match, NULLs are returned for columns from the table even if there is a no match.</br>
+* <b>CROSS JOIN:</b> Returns the Cartesian product of both tables, i.e., all possible combinations of rows from both tables.</br>
+* <b>SELF JOIN:</b> A join where a table is joined with itself to compare rows within the same table.
+
+
+
