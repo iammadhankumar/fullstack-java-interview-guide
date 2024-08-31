@@ -18,6 +18,16 @@ Relational databases are preffered when storing and retrieving structured data t
 NoSQL databases are designed for handling large amounts of unstructured data.  Unlike relational databases, they don’t use tables with rows and columns. 
 Instead, they store data in various formats, like documents, key-value pairs, or graphs
 
+#### 4. What is transactions in database ?
+The transactions is series of the operations performed with in the database. All the operations must be completed successfully; if not, the transaction is rolled back to keep the database correct.
+
+#### 5. Explain about ACID property ?
+The ACID properties ensure that database transactions are processed reliably.</br>
+* <b>Atomicity:</b> A transaction happens completely or not at all. </br>
+* <b>Consistency:</b> A transaction keeps the database in a correct state.</br>
+* <b>Isolation:</b> Transactions don’t interfere with each other.</br>
+* <b>Durability:</b> Once a transaction is finished, its changes are permanent, even if there’s a failure.
+
 ## SQL
 
 #### 1. What is SQL ?
@@ -62,5 +72,16 @@ A JOIN is used to combine rows from two or more tables based on a related column
 * <b>CROSS JOIN:</b> Returns the Cartesian product of both tables, i.e., all possible combinations of rows from both tables.</br>
 * <b>SELF JOIN:</b> A join where a table is joined with itself to compare rows within the same table.
 
+#### 8. What is subquery in SQL ?
+A subquery is a query within another query. The outer query is known as the main query, and the inner query is known as a subquery.
+Subqueries are on the right side of the comparison operator. A subquery is enclosed in parentheses.</br>
+Ex. `SELECT * FROM EMPLOYEE WHERE ID IN (SELECT ID FROM EMPLOYEE WHERE SALARY > 4500);`.  
+
+#### 10. What is the difference between UNION and UNION ALL?
+* UNION combines results from two queries and removes duplicate rows.</br>
+* UNION ALL combines results from two queries but includes all duplicates.
+
+#### 11. How do you handle NULL values in SQL?
+NULL values represent missing or unknown data. You can use functions like `IS NULL`, `IS NOT NULL`, or handle NULLs with `COALESCE` to provide default values.
 
 
