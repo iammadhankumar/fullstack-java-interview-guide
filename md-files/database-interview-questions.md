@@ -131,4 +131,13 @@ SQL functions are like built-in tools that help you manipulate and analyze data 
 * <b>DATEADD():</b> Adds a specified interval to a date.
 * <b>CURDATE()/CURTIME():</b> returns the current date/time.
 
+<b>Mathematical Functions:</b> Perform mathematical calculations.</br>
+* <b>ROUND():</b> Rounds a number to a specified number of decimal places.
+* <b>FLOOR():</b> Rounds down to the nearest whole number.
+* <b>CEIL()/CEILING():</b> Rounds up to the nearest whole number.
+* <b>SQRT():</b> Returns the square root of a number.
+* <b>POWER():</b> Raises a number to a specified power.
+* <b>SIGN():</b> Returns the sign of a number (positive, negative, or zero).
+
+
 
