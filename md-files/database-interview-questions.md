@@ -103,4 +103,32 @@ Ex. `SELECT * FROM EMPLOYEE WHERE ID IN (SELECT ID FROM EMPLOYEE WHERE SALARY > 
 #### 11. How do you handle NULL values in SQL?
 NULL values represent missing or unknown data. You can use functions like `IS NULL`, `IS NOT NULL`, or handle NULLs with `COALESCE` to provide default values.
 
+#### 12. Explain about MySQL Functions ?
+SQL functions are like built-in tools that help you manipulate and analyze data in a database.</br></br>
+<b>Aggregation Functions:</b></br>
+* <b>SUM():</b> Adds up values.
+* <b>AVG():</b> Finds the average value.
+* <b>COUNT():</b> Counts the number of rows.
+* <b>MIN():</b> Returns the minimum value in a set of values.
+* <b>MAX():</b> Returns the maximum value in a set of values.
+
+<b>String Functions:</b> String functions in SQL are used to process and manipulate text data.</br>
+* <b>CONCAT():</b> Joins strings together.
+* <b>SUBSTRING():</b> Extracts part of a string.
+* <b>UPPER():</b> Converts text to uppercase.
+* <b>LOWER():</b> Converts text to lowercase.
+* <b>LENGTH():</b> returns the length of a string
+* <b>TRIM():</b> removes leading and trailing spaces from a string.
+* <b>REPLACE():</b> replaces occurrences of `old_string` with `new_substring` in a string.
+* <b>LEFT()/RIGHT():</b> returns the left/right length characters of a string
+* <b>LTRIM()/RTRIM()</b>  removes left/right side spaces from a string.
+
+<b>Date Functions:</b> Date functions in SQL are used to Handle dates and times.</br>
+* <b>NOW():</b> Gets the current date and time.
+* <b>DATEPART():</b> Extracts a part of a date, like the year or month.
+* <b>DATE_FORMAT():</b> Formats a date according to a specified format.
+* <b>DATEDIFF():</b> Calculates the difference between two dates.
+* <b>DATEADD():</b> Adds a specified interval to a date.
+* <b>CURDATE()/CURTIME():</b> returns the current date/time.
+
 
