@@ -138,6 +138,11 @@ SQL functions are like built-in tools that help you manipulate and analyze data 
 * <b>SQRT():</b> Returns the square root of a number.
 * <b>POWER():</b> Raises a number to a specified power.
 * <b>SIGN():</b> Returns the sign of a number (positive, negative, or zero).
+  
+#### 13. What is the GROUP BY condition in SQL ?
+The `GROUP BY` clause in SQL is used to group rows that have the same values in specified columns. The GROUP BY statement is used with aggregate functions like `COUNT()`, `MAX()`, `MIN()`, `SUM()` and `AVG()` to group the result set by one or more columns. In a query, the `GROUP BY` clause is placed before the `ORDER BY` and `HAVING` clauses, if they are used.
+
+
 
 
 
