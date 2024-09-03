@@ -14,19 +14,23 @@ import org.springframework.security.web.SecurityFilterChain;
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig {
+    
+  @Bean
+   public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+    http
+        .authorizeHttpRequests((requests) -> requests // Configure authorization for HTTP requests
+            .requestMatchers("/", "/home") // Allow public access to the root URL ("/") and "/home"
+             .permitAll()             
+            .anyRequest().authenticated() // Require authentication for any other request
+        )
+        .logout((logout) -> logout // Configure logout settings
+            .permitAll() // Permit access to the logout endpoint without authentication
+        );
 
-    @Bean
-    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-        http
-            .authorizeHttpRequests((requests) -> requests
-                .requestMatchers("/", "/home").permitAll()
-                .anyRequest().authenticated()
-            ).logout((logout) -> logout
-                .permitAll()
-            );
+    // Build and return the SecurityFilterChain with the applied configurations
+    return http.build();
+}
 
-        return http.build();
-    }
 
     @Bean
     public UserDetailsService userDetailsService() {
