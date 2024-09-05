@@ -85,5 +85,6 @@ public class WaitNotifyExample {
 Waiting first thread is waiting...
 Notifying thread is notifying...
 Waiting first thread is notified and resumed.
+```
 
 
