@@ -1,4 +1,4 @@
-## 1. Can an interface have default methods in Java ?
+### 1. Can an interface have default methods in Java ?
 <b>Answer:</b> Yes 
 ```java
 interface Car {
@@ -9,7 +9,7 @@ interface Car {
     }
 }
 ```
-## 2. Can an interface extend multiple interfaces ?
+### 2. Can an interface extend multiple interfaces ?
 <b>Answer:</b> Yes
 ```java
 interface Movable {
@@ -41,10 +41,10 @@ class Airplane implements Vehicle {
     }
 }
 ```
-## 3.  Can we create an instance of an interface ?
+### 3.  Can we create an instance of an interface ?
 <b>Answer:</b> No
 
-## 4. Can an interface have private methods ?
+### 4. Can an interface have private methods ?
 Answer : Yes
 ```java 
 public interface PrinterInterface {
@@ -59,7 +59,7 @@ private void setup() {  // Private method
  }
 }
 ```
-## 5. How can you achieve multiple inheritance in Java using interfaces ?
+### 5. How can you achieve multiple inheritance in Java using interfaces ?
 <b>Answer:</b> Java does not support multiple inheritance of classes, but it does support multiple inheritance through interfaces. A class can implement multiple interfaces, thus inheriting the abstract methods from all of them.
 ```java
 interface A {
@@ -90,7 +90,7 @@ public class Main {
     }
 }
 ```
-## 6.  What will happen if a class implements two interfaces that have the same method signatures but different default implementations ?
+### 6.  What will happen if a class implements two interfaces that have the same method signatures but different default implementations ?
 <b>Answer:</b> If a class implements two interfaces that have the same method signature but different default implementations, the class must provide its own implementation of the method. The compiler will not know which default method to use and will throw a compilation error if the class does not provide its own implementation.
 ```java
 interface Interface1 {
@@ -119,7 +119,7 @@ public class Main {
     }
 }
 ```
-## 7. Explain how you can use the @FunctionalInterface annotation.
+### 7. Explain how you can use the @FunctionalInterface annotation.
 <b>Answer:</b> The @FunctionalInterface annotation is used to indicate that the interface is intended to be a functional interface. A functional interface is an interface with exactly one abstract method, and it can have multiple default or static methods. This annotation helps to ensure that the interface conforms to this requirement.
 ```java
 @FunctionalInterface
@@ -143,7 +143,7 @@ public class Main {
     }
 }
 ```
-## 8. Can you explain what happens if you try to implement an interface method in a class but the method is declared default in the interface ?
+### 8. Can you explain what happens if you try to implement an interface method in a class but the method is declared default in the interface ?
 <b>Answer:</b> If a class implements a method from an interface that is declared as default, the class can either use the default implementation provided by the interface or override it with its own implementation. If the class does not override the method, the default implementation from the interface will be used.
 ```java
 interface MyInterface {
