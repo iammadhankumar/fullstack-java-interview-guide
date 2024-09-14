@@ -119,3 +119,19 @@ Thread thread = new Thread(() -> {
 thread.setDaemon(true);
 thread.start();
 ```
+### 6. How do you sleep a thread ?
+```java
+try {
+    Thread.sleep(1000);  // Sleep for 1 second
+} catch (InterruptedException e) {
+    e.printStackTrace();
+}
+```
+### 7. How to start a thread ?
+```java
+thread.start();  // Calls the thread's run() method
+```
+### 8. How to stop a thread ?
+```java
+thread.interrupt(); 
+```
