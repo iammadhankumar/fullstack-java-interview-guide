@@ -142,7 +142,109 @@ SQL functions are like built-in tools that help you manipulate and analyze data 
 #### 13. What is the GROUP BY condition in SQL ?
 The `GROUP BY` clause in SQL is used to group rows that have the same values in specified columns. The GROUP BY statement is used with aggregate functions like `COUNT()`, `MAX()`, `MIN()`, `SUM()` and `AVG()` to group the result set by one or more columns. In a query, the `GROUP BY` clause is placed before the `ORDER BY` and `HAVING` clauses, if they are used.
 
-
+## SQL Query Questions
+<b>Part-1:</b>
+#### 1. find the average salary of the employee ?
+```sql
+select AVG(salary) from employee;
+```
+#### 2. find the employees who joined the organization in specific year ?
+```sql
+select * from employee where year(DOJ) = 2000;
+```
+#### 3. Find highest salary of employee ?
+```sql
+select MAX(SALARY) from employee;
+```
+#### 4. find second or n-th highest salary of employee ?
+<b>Without windows function :</b></br>
+```sql
+SELECT MAX(salary) AS second_highest_salary FROM employees WHERE salary < (SELECT MAX(salary) FROM employees);
+```
+<b>With windows function :</b></br> 
+```sql
+SELECT DISTINCT salary AS second_highest_salary FROM employees order by salary DESC LIMIT 1 OFFSET 1;
+```
+#### 5. How many employees are there in department ?
+```sql
+select count(emp_no) from employee where DEPT = 'Java';
+```
+#### 6. Find the average salary of male and female employee ?
+```sql
+SELECT gender, AVG(SALARY) AS AVG_SALARY FROM EMPLOYEE GROUP BY gender;
+```
+#### 7. How many male and female employees are there ?
+```sql
+SELECT gender, COUNT(GENDER) AS count FROM EMPLOYEE GROUP BY gender;
+```
+#### 8. How many females are there in particular department(JAVA) ?
+```sql
+select dept, count(*) AS female_count from employee where gender = 'FEMALE' and dept = 'IT' GROUP BY dept;
+```
+#### 9. Increment the salary of hr department by 10 parcentage ?
+```sql
+UPDATE EMPLOYEE SET SALARY = SALARY * 1.1 WHERE DEPT = 'HR';
+```
+#### 10. Find the oldest and youngest employee in organization ?
+```sql
+SELECT * FROM employees ORDER BY dob ASC LIMIT 1;
+SELECT * FROM employees ORDER BY dob DESC LIMIT 1;
+```
+#### 11. Find minimum and maximum salary of employee ?
+```sql
+SELECT MIN(salary) AS min_salary, MAX(salary) AS max_salary FROM EMPLOYEE;
+```
+<b>Part-2:</b>
+#### 1. How do you concatenate two or more strings in SQL ?
+```sql
+SELECT CONCAT(first_name, ' ', last_name) AS full_name FROM EMPLOYEE;
+```
+#### 2. If some names contain NULL values, how would you modify your CONCAT operation to handle these gracefully ?
+```sql
+SELECT CONCAT(COALESCE(Firstname, ''), ' ', COALESCE(Lastname, '')) AS full_name FROM employee;
+```
+#### 3. How do you find the length of a string in SQL ?
+```sql
+SELECT LENGTH(column_name) AS string_length FROM table_name;
+```
+#### 4. How do you extract a substring from a string in SQL ?
+```sql
+SELECT SUBSTRING(column_name, start_position, length) AS extracted_substring FROM table_name;
+```
+#### 5. How do you convert a string to uppercase or lowercase in SQL ?
+```sql
+SELECT UPPER(column_name) AS upper_case_string FROM table_name;
+SELECT LOWER(column_name) AS lower_case_string FROM table_name;
+```
+#### 6. How do you trim leading and trailing spaces from a string in SQL ?
+```sql
+SELECT TRIM(column_name) AS trimmed_string FROM table_name;
+```
+#### 7. How do you replace a substring within a string in SQL ?
+```sql
+SELECT REPLACE(column_name, 'old_substring', 'new_substring') AS replaced_string FROM table_name;
+```
+#### 8. How do you find the position of a substring within a string in SQL ?
+```sql
+SELECT INSTR(column_name, 'substring') AS position FROM table_name;
+```
+#### 9. How do you check if a string contains a substring in SQL ?
+```sql
+SELECT CASE
+          WHEN column_name LIKE '%substring%' THEN 'Contains'
+          ELSE 'Does not contain'
+       END AS contains_substring
+FROM table_name;
+```
+#### 10. How do you pad a string to a certain length with a specific character in SQL ?
+```sql
+SELECT LPAD(column_name, length, 'padding_char') AS padded_string FROM table_name;
+SELECT RPAD(column_name, length, 'padding_char') AS padded_string FROM table_name;
+```
+#### 11. How do you split a string by a delimiter in SQL ?
+```sql
+SELECT SUBSTRING_INDEX(column_name, 'delimiter', n) AS part FROM table_name;
+```
 
 
 
