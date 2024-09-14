@@ -1,4 +1,4 @@
-### Creating a Thread by Extending the Thread Class in Java :
+### 1. Creating a Thread by Extending the Thread Class in Java :
 ```java
 class MyThread extends Thread {
     public void run() {
@@ -13,7 +13,7 @@ public class Main {
     }
 }
 ```
-### Create a Thread By Implementing the Runnable interface :
+### 2. Create a Thread By Implementing the Runnable interface :
 ```java
 class MyRunnable implements Runnable {
     public void run() {
@@ -86,5 +86,36 @@ Waiting first thread is waiting...
 Notifying thread is notifying...
 Waiting first thread is notified and resumed.
 ```
-
-
+### 3. How do you synchronize a method or block ?
+#### Synchronize a method:
+```java
+public synchronized void myMethod() {
+    // Synchronized code
+}
+```
+#### Synchronize a block:
+```java
+public void myMethod() {
+    synchronized (this) {
+        // Synchronized code
+    }
+}
+```
+### 4. How do you use a thread pool ?
+#### Using ExecutorService:
+```java
+ExecutorService executor = Executors.newFixedThreadPool(10);
+executor.submit(() -> {
+    // Task code
+});
+executor.shutdown();
+```
+### 5. How do you set a thread as a daemon ?
+A daemon thread is a background thread in Java that runs in the background and doesn't stop the program from ending when all the main tasks are done.
+```java
+Thread thread = new Thread(() -> {
+    // Task code
+});
+thread.setDaemon(true);
+thread.start();
+```
