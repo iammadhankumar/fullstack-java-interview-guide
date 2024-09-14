@@ -1,4 +1,4 @@
-## Creating a Thread by Extending the Thread Class in Java :
+### Creating a Thread by Extending the Thread Class in Java :
 ```java
 class MyThread extends Thread {
     public void run() {
@@ -13,7 +13,7 @@ public class Main {
     }
 }
 ```
-## Create a Thread By Implementing the Runnable interface :
+### Create a Thread By Implementing the Runnable interface :
 ```java
 class MyRunnable implements Runnable {
     public void run() {
@@ -29,7 +29,7 @@ public class Main {
 }
 ```
 
-## Wait() and Notify() Example :
+### Wait() and Notify() Example :
 ```java
 package com.example.thread;
 
