@@ -142,7 +142,7 @@ SQL functions are like built-in tools that help you manipulate and analyze data 
 #### 13. What is the GROUP BY condition in SQL ?
 The `GROUP BY` clause in SQL is used to group rows that have the same values in specified columns. The GROUP BY statement is used with aggregate functions like `COUNT()`, `MAX()`, `MIN()`, `SUM()` and `AVG()` to group the result set by one or more columns. In a query, the `GROUP BY` clause is placed before the `ORDER BY` and `HAVING` clauses, if they are used.
 
-## SQL Query Questions
+## SQL Query Questions(MySQL)
 <b>Part-1:</b>
 #### 1. find the average salary of the employee ?
 ```sql
@@ -236,15 +236,37 @@ SELECT CASE
        END AS contains_substring
 FROM table_name;
 ```
-#### 10. How do you pad a string to a certain length with a specific character in SQL ?
+#### 10. How do you pad a string to a certain length with a specific character in MySQL ?
 ```sql
 SELECT LPAD(column_name, length, 'padding_char') AS padded_string FROM table_name;
 SELECT RPAD(column_name, length, 'padding_char') AS padded_string FROM table_name;
 ```
-#### 11. How do you split a string by a delimiter in SQL ?
+#### 11. How do you split a string by a delimiter in MySQL ?
 ```sql
 SELECT SUBSTRING_INDEX(column_name, 'delimiter', n) AS part FROM table_name;
 ```
+#### 12. Get the first name that starts with 'J' in MySQL?
+```sql
+#Case-Insensitive
+SELECT * FROM employee WHERE firstname LIKE 'J%';
+#Case-Sensitive
+SELECT * FROM employee WHERE BINARY firstname LIKE 'J%'; 
+```
+#### 13. Get the first name that ends with 'N' in MySQL?
+```sql
+#Case-Insensitive
+SELECT * FROM employee WHERE firstname LIKE '%N';
+#Case-Sensitive
+SELECT * FROM employee WHERE BINARY firstname LIKE '%N';
+```
+#### 14. Get the first name that starts with 'J' and ends With 'N' in MySQL?
+```sql
+#Case-Insensitive
+SELECT * FROM employee WHERE firstname LIKE 'J%N';
+#Case-Sensitive
+SELECT * FROM employee WHERE BINARY firstname LIKE 'J%N';
+```
+
 
 
 
