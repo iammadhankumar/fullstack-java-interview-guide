@@ -122,6 +122,9 @@ thread.start();
 ### 6. How do you sleep a thread ?
 ```java
 try {
+    Thread thread = new Thread(() -> {
+    // Task code
+    });
     Thread.sleep(1000);  // Sleep for 1 second
 } catch (InterruptedException e) {
     e.printStackTrace();
@@ -129,9 +132,31 @@ try {
 ```
 ### 7. How to start a thread ?
 ```java
+Thread thread = new Thread(() -> {
+    // Task code
+});
 thread.start();  // Calls the thread's run() method
 ```
 ### 8. How to stop a thread ?
 ```java
+Thread thread = new Thread(() -> {
+    // Task code
+});
 thread.interrupt(); 
+```
+### 9. How to check thread is stopped or interrupted ?
+```java
+Thread thread = new Thread(() -> {
+    // Task code
+});
+
+thread.start(); // Start the thread
+
+// Interrupt the thread
+thread.interrupt();
+
+if (thread.isInterrupted()) {
+    // The thread was interrupted
+    System.out.println("The thread was interrupted.");
+}
 ```
