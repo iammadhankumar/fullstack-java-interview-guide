@@ -143,7 +143,7 @@ SQL functions are like built-in tools that help you manipulate and analyze data 
 The `GROUP BY` clause in SQL is used to group rows that have the same values in specified columns. The GROUP BY statement is used with aggregate functions like `COUNT()`, `MAX()`, `MIN()`, `SUM()` and `AVG()` to group the result set by one or more columns. In a query, the `GROUP BY` clause is placed before the `ORDER BY` and `HAVING` clauses, if they are used.
 
 ## SQL Query Questions(MySQL)
-<b>Part-1:</b>
+<b>Part-1: Aggregation Functions</b>
 #### 1. find the average salary of the employee ?
 ```sql
 select AVG(salary) from employee;
@@ -194,7 +194,7 @@ SELECT * FROM employees ORDER BY dob DESC LIMIT 1;
 ```sql
 SELECT MIN(salary) AS min_salary, MAX(salary) AS max_salary FROM EMPLOYEE;
 ```
-<b>Part-2:</b>
+<b>Part-2: String Functions</b>
 #### 1. How do you concatenate two or more strings in SQL ?
 ```sql
 SELECT CONCAT(first_name, ' ', last_name) AS full_name FROM EMPLOYEE;
@@ -266,6 +266,68 @@ SELECT * FROM employee WHERE firstname LIKE 'J%N';
 #Case-Sensitive
 SELECT * FROM employee WHERE BINARY firstname LIKE 'J%N';
 ```
+<b>Part-3: SQL Joins</b>
+#### 1. INNER JOIN:
+Only the rows where there is a match in both tables.
+```sql
+SELECT columns
+FROM table1
+INNER JOIN table2
+ON table1.column = table2.column;
+```
+<b>Example:</b> Get employees and their respective departments (only if they are assigned to a department).
+#### 2. LEFT JOIN (LEFT OUTER JOIN):
+All rows from the left table and matched rows from the right table. If there's no match, NULL will be returned for the right table.
+```sql
+SELECT columns
+FROM table1
+LEFT JOIN table2
+ON table1.column = table2.column;
+```
+<b>Example:</b> Get all employees and their departments, even if they are not assigned to one.
+####  3. RIGHT JOIN (RIGHT OUTER JOIN):
+ All rows from the right table and matched rows from the left table. If there's no match, NULL will be returned for the left table.
+ ```sql
+SELECT columns
+FROM table1
+RIGHT JOIN table2
+ON table1.column = table2.column;
+ ```
+<b>Example:</b> Get all departments and their employees, even if there are no employees in a department.
+#### 4. FULL OUTER JOIN:
+All rows when there is a match in either left or right table. Rows without a match will return NULL on the non-matching side.
+```sql
+SELECT columns
+FROM table1
+FULL OUTER JOIN table2
+ON table1.column = table2.column;
+```
+<b>Example:</b> Get all employees and departments, even if they aren't linked to one another.
+#### 5. CROSS JOIN:
+The Cartesian product of both tables (every row from the first table paired with every row from the second table).
+```sql
+SELECT columns
+FROM table1
+CROSS JOIN table2;
+```
+<b>Example:</b> Get all possible combinations of employees and projects (use carefully as it can create a huge result set).
+#### 6. SELF JOIN:
+A join of a table to itself. Useful for hierarchical or relational data within the same table.
+```sql
+SELECT a.column, b.column
+FROM table1 a
+INNER JOIN table1 b
+ON a.column = b.column;
+```
+<b>Example:</b> Get all employees along with their manager details from the same table.
+#### 7. NATURAL JOIN:
+A join based on columns with the same name and datatype in both tables (automatically performed).
+```sql
+SELECT columns
+FROM table1
+NATURAL JOIN table2;
+```
+<b>Example:</b> Automatically joins the tables based on matching columns without specifying the ON condition.
 
 
 
