@@ -447,6 +447,101 @@ WHERE order_date >= DATE_SUB(CURDATE(), INTERVAL 30 DAY)
 GROUP BY order_date
 ORDER BY order_date;
 ```
+## MongoDB 
+#### 1. What is MongoDB ?
+MongoDB is a NoSQL database that stores data in a flexible, JSON-like format called BSON. Unlike traditional databases that use tables and rows, MongoDB uses collections and documents, allowing you to handle large amounts of unstructured data more easily.
+
+#### 2. What is the difference between MongoDB and MySQL ?
+MySQL is a relational database that uses structured tables with rows and columns.</br> 
+MongoDB is a NoSQL database that stores data in flexible, JSON-like documents.
+
+#### 3. How does MongoDB handle indexing ?
+MongoDB uses indexes to quickly find documents in a collection. Without indexes, MongoDB searches every document, which is slow.
+An index lets MongoDB find data faster by jumping to the right documents instead of scanning everything.
+
+#### 4. What is an Aggregation Framework in MongoDB ?
+The Aggregation Framework in MongoDB is a powerful tool for processing and analyzing data. It supports operations such as filtering, grouping, and sorting the data. Key components of MongoDB's aggregation methods include:
+* $match: Filters documents based on criteria (similar to a WHERE clause).
+* $group: Groups documents by a specified field and performs aggregation operations like sum or average.
+* $sort: Sorts documents based on specified fields.
+* $project: Reshapes documents by including or excluding fields.
+* $limit: Limits the number of documents returned.
+* $skip: Skips a specified number of documents.
+* $lookup: Performs a left join to include documents from another collection.
+* $unwind: Deconstructs an array field from documents to output a document for each element.
+
+#### 5. What is a Replica Set in MongoDB ?
+A Replica Set in MongoDB is a group of MongoDB servers that work together to ensure data is always available. One server is the primary where all writes happen, while the others are secondaries that copy the data from the primary. If the primary server fails, one of the backup servers automatically becomes the new primary, so the data remains available and safe.
+
+## MongoDB Query Questions
+#### 1. How do you retrieve all documents from a MongoDB collection ?
+To retrieve all documents from a MongoDB collection, use the find() method without any query parameters.
+```javascript
+db.collection.find();
+```
+#### 2. How do you find documents where a field equals a specific value ?
+To find documents where a specific field matches a value, use the find() method with a query object.
+```javascript
+db.collection.find({ field: "value" });
+```
+#### 3. How do you insert a single document into a MongoDB collection ?
+To insert a single document, use the insertOne() method.
+```javascript
+db.collection.insertOne({
+  name: "John Doe",
+  age: 30,
+  email: "john.doe@example.com"
+});
+```
+#### 4. How do you insert multiple documents into a MongoDB collection ?
+To insert multiple documents, use the insertMany() method.
+```javascript
+db.collection.insertMany([
+  { name: "Alice Smith", age: 25, email: "alice.smith@example.com" },
+  { name: "Bob Johnson", age: 40, email: "bob.johnson@example.com" }
+]);
+```
+#### 5. How do you update a single document in a MongoDB collection ?
+To update a single document, use the updateOne() method:.
+```javascript
+db.collection.updateOne(
+  { field: "value" }, // Query filter
+  { $set: { fieldToUpdate: "newValue" } } // Update operation
+);
+```
+#### 6. How do you delete a document from a MongoDB collection ?
+To delete a single document, use the deleteOne() method.
+```javascript
+db.collection.deleteOne({ field: "value" });
+```
+#### 7. How do you count the number of documents in a MongoDB collection ?
+To count the number of documents in a collection, use the countDocuments() method.
+```javascript
+db.collection.countDocuments(); // total number of documents in the collection.
+db.collection.countDocuments({ field: "value" }); // query filter to count only documents that match certain criteria:
+```
+#### 8. How do you sort documents by a specific field in MongoDB ?
+To sort documents by a specific field, use the sort() method with a sort order.
+```javascript
+db.collection.find().sort({ field: 1 }); // Ascending order
+db.collection.find().sort({ field: -1 }); // Descending order
+```
+#### 9. How do you find documents where a field’s value is greater than a specific value ?
+To find documents where a field’s value is greater than a specific value, use a comparison operator.
+```javascript
+db.collection.find({ field: { $gt: value } });
+```
+#### 10. How do you find documents where a field’s value is within a specific range ?
+To find documents where a field’s value is within a range, use the $gte (greater than or equal to) and $lte (less than or equal to) operators.
+```javascript
+db.collection.find({ field: { $gte: minValue, $lte: maxValue } });
+```
+#### 11. How do you perform a partial text search(Reg Exp) in MongoDB ?
+To perform a partial text search, use regular expressions.
+```javascript
+db.collection.find({ field: /pattern/ });
+```
+
 
 
 
