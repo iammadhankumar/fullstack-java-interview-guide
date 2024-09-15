@@ -329,6 +329,125 @@ NATURAL JOIN table2;
 ```
 <b>Example:</b> Automatically joins the tables based on matching columns without specifying the ON condition.
 
+<b>Part-4: Date/Time Functions</b>
+#### 1. How would you get the current date and time in SQL ?
+```sql
+SELECT CURRENT_TIMESTAMP;
+```
+#### 2. How would you extract only the year, month, or day from a date ? 
+```sql
+SELECT EXTRACT(YEAR FROM NOW()), EXTRACT(MONTH FROM NOW()), EXTRACT(DAY FROM NOW());
+```
+#### 3. How do you calculate the difference between two dates in days ?
+```sql
+SELECT DATEDIFF('2024-12-31', '2024-01-01');
+```
+#### 4. How can you add days, months, or years to a date ?
+```sql
+SELECT DATE_ADD('2024-09-15', INTERVAL 10 DAY);
+SELECT DATE_ADD('2024-09-15', INTERVAL 1 MONTH);
+```
+#### 5. How do you format a date in a specific format (e.g., YYYY-MM-DD) ?
+```sql
+SELECT DATE_FORMAT(NOW(), '%Y-%m-%d');
+```
+#### 6. Write a query to return all employees who joined in the last 30 days ?
+```sql
+SELECT * FROM employees WHERE join_date >= DATE_SUB(CURDATE(), INTERVAL 30 DAY);
+```
+#### 7. Get All Employees Who Have a Birthday This Month ?
+Fetch a list of employees whose birthday occurs in the current month, regardless of the year.
+```sql
+SELECT employee_id, name, birth_date
+FROM employees
+WHERE MONTH(birth_date) = MONTH(CURDATE());
+```
+#### 8. Calculate the Age of Each Employee ?
+Calculate the age of employees from their date of birth.
+```sql
+SELECT employee_id, name, 
+   FLOOR(DATEDIFF(CURDATE(), birth_date) / 365) AS age
+FROM employees;
+```
+#### 9. Find the Difference Between Two Date Columns in Different Units (Years, Months, Days) ?
+Calculate the difference between the start_date and end_date in different units.
+```sql
+SELECT employee_id, 
+   TIMESTAMPDIFF(YEAR, start_date, end_date) AS years_diff,
+   TIMESTAMPDIFF(MONTH, start_date, end_date) AS months_diff,
+   TIMESTAMPDIFF(DAY, start_date, end_date) AS days_diff
+FROM employees_projects;
+```
+#### 10. Get All Orders Made in the Last 7 Days ?
+Retrieve all the orders that were placed in the last 7 days (a rolling window from the current date).
+```sql
+SELECT order_id, order_date, customer_id
+FROM orders
+WHERE order_date >= DATE_SUB(CURDATE(), INTERVAL 7 DAY);
+```
+#### 11. Find Employees Who Have Been With the Company for More Than 5 Years ?
+Fetch employees whose hire_date is more than 5 years ago.
+```sql
+SELECT employee_id, name, hire_date
+FROM employees
+WHERE hire_date <= DATE_SUB(CURDATE(), INTERVAL 5 YEAR);
+```
+#### 12. Calculate Total Time Spent on Projects by Each Employee ?
+For each employee, calculate the total time (in days) they’ve worked across different projects.
+```sql
+SELECT employee_id, name, 
+   SUM(DATEDIFF(end_date, start_date)) AS total_days_worked
+FROM employees_projects
+GROUP BY employee_id;
+```
+#### 13. Get the First and Last Order Date for Each Customer ?
+Retrieve the first and last order dates for each customer.
+```sql
+SELECT customer_id, 
+   MIN(order_date) AS first_order, 
+   MAX(order_date) AS last_order
+FROM orders
+GROUP BY customer_id;
+```
+#### 14. Get Employees with Ongoing Projects (Start Date in the Past and No End Date) ?
+Find employees working on projects that are ongoing, meaning they have a start date but no end date (i.e., end_date is NULL).
+```sql
+SELECT employee_id, project_id, start_date
+FROM employees_projects
+WHERE start_date <= CURDATE() AND end_date IS NULL;
+```
+#### 15. Find Customers Who Have Not Placed Orders in the Last Year ?
+Identify customers who have not placed an order in the last year.
+```sql
+SELECT customer_id, name
+FROM customers
+WHERE customer_id NOT IN (
+   SELECT customer_id
+   FROM orders
+   WHERE order_date >= DATE_SUB(CURDATE(), INTERVAL 1 YEAR)
+);
+```
+#### 16. Get Sales Data Grouped by Month and Year ?
+Retrieve total sales for each month and year, grouped and ordered accordingly.
+```sql
+SELECT 
+   YEAR(order_date) AS year, 
+   MONTH(order_date) AS month, 
+   SUM(total_amount) AS total_sales
+FROM sales
+GROUP BY YEAR(order_date), MONTH(order_date)
+ORDER BY YEAR(order_date), MONTH(order_date);
+```
+#### 17. Find the Number of Orders Each Day for the Last 30 Days ?
+Calculate how many orders were placed each day in the last 30 days.
+```sql
+SELECT order_date, COUNT(*) AS total_orders
+FROM orders
+WHERE order_date >= DATE_SUB(CURDATE(), INTERVAL 30 DAY)
+GROUP BY order_date
+ORDER BY order_date;
+```
+
 
 
 
