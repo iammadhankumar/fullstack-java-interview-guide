@@ -39,8 +39,9 @@
             text-align: center;
             cursor: pointer;
             transition: background-color 0.3s, border-color 0.3s;
-            flex: 1 1 calc(33.333% - 20px); /* Adjusts for 3 items per row */
-            max-width: calc(33.333% - 20px); /* Ensures no overflow */
+            flex: 1 1 calc(33.333% - 20px); /* 3 items per row */
+            max-width: calc(33.333% - 20px);
+            min-width: 150px; /* Ensure tabs don't shrink too small */
         }
         .tab:hover {
             background-color: #007bff;
@@ -49,6 +50,7 @@
         }
         .tab span {
             font-weight: bold;
+            font-size: 1em;
         }
         .content {
             display: none;
@@ -62,6 +64,7 @@
         .content .markdown-body {
             max-width: 100%;
             word-wrap: break-word;
+            overflow-x: auto; /* Allows horizontal scrolling if needed */
         }
         @media (max-width: 768px) {
             .tab {
@@ -73,6 +76,21 @@
             .tab {
                 flex: 1 1 100%; /* 1 item per row on small screens */
                 max-width: 100%;
+            }
+        }
+        @media (max-width: 480px) {
+            .title h1 {
+                font-size: 1.5em;
+            }
+        }
+        /* Ensure markdown content is responsive */
+        #markdown-content {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+        @media (max-width: 768px) {
+            #markdown-content {
+                font-size: 14px; /* Smaller text for mobile */
             }
         }
     </style>
