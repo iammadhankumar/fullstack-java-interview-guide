@@ -474,7 +474,7 @@ The Aggregation Framework in MongoDB is a powerful tool for processing and analy
 A Replica Set in MongoDB is a group of MongoDB servers that work together to ensure data is always available. One server is the primary where all writes happen, while the others are secondaries that copy the data from the primary. If the primary server fails, one of the backup servers automatically becomes the new primary, so the data remains available and safe.
 
 #### 6. How do you handle pagination in MongoDB ?
-To handle pagination in MongoDB, you can use the $skip and $limit stages in the aggregation pipeline or directly in the query.
+To handle pagination in MongoDB, use the $skip and $limit stages in the aggregation pipeline or directly in the query.
 
 * $skip: Skips a number of documents based on the current page.
 * $limit: Limits the number of documents returned to show on that page.
