@@ -160,3 +160,29 @@ if (thread.isInterrupted()) {
     System.out.println("The thread was interrupted.");
 }
 ```
+### 10. Explain the purpose thread.join() ?
+The purpose of thread.join() in Java is to pause the execution of the current thread until completed its execution.
+```java
+  // Create a thread
+        Thread thread = new Thread(() -> {
+            // Task that this thread will perform
+            System.out.println("Thread task started...");
+            try {
+                // Simulate some work
+                Thread.sleep(2000); // Sleep for 2 seconds
+            } catch (InterruptedException e) {
+                System.out.println("Thread was interrupted.");
+            }
+            System.out.println("Thread task completed.");
+        });
+
+        // Start the thread
+        thread.start();
+
+        // Use join to wait for the thread to finish
+        try {
+            thread.join();  // Main thread waits until 'thread' finishes
+        } catch (InterruptedException e) {
+            System.out.println("Main thread was interrupted while waiting.");
+        }
+```
