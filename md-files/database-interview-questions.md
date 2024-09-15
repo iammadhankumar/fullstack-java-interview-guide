@@ -473,6 +473,13 @@ The Aggregation Framework in MongoDB is a powerful tool for processing and analy
 #### 5. What is a Replica Set in MongoDB ?
 A Replica Set in MongoDB is a group of MongoDB servers that work together to ensure data is always available. One server is the primary where all writes happen, while the others are secondaries that copy the data from the primary. If the primary server fails, one of the backup servers automatically becomes the new primary, so the data remains available and safe.
 
+#### 6. How do you handle pagination in MongoDB ?
+To handle pagination in MongoDB, you can use the $skip and $limit stages in the aggregation pipeline or directly in the query.
+
+* $skip: Skips a number of documents based on the current page.
+* $limit: Limits the number of documents returned to show on that page.
+
+
 ## MongoDB Query Questions
 #### 1. How do you retrieve all documents from a MongoDB collection ?
 To retrieve all documents from a MongoDB collection, use the find() method without any query parameters.
@@ -540,6 +547,13 @@ db.collection.find({ field: { $gte: minValue, $lte: maxValue } });
 To perform a partial text search, use regular expressions.
 ```javascript
 db.collection.find({ field: /pattern/ });
+```
+#### 12. How do you perform pagination in MongoDB ?
+To handle pagination in MongoDB, use the $skip and $limit stages in the aggregation pipeline or directly in the query.
+```javascript
+db.items.find()
+  .skip(10)  // Skip the first 10 items (for page 1)
+  .limit(10) // Limit the results to 10 items (for page 2)
 ```
 
 
