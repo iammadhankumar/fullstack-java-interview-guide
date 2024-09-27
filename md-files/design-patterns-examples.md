@@ -267,3 +267,290 @@ public class Main {
     }
 }
 ```
+### 6. Adapter Pattern :
+The Adapter Pattern in Java is like a translator. It allows two classes with different interfaces to work together by using an adapter class. The adapter converts one interface into another so that classes can communicate without changing their original code.
+```java
+// Step 1: Define the MediaPlayer interface
+interface MediaPlayer {
+    void play(String audioType); // Method to play media based on its type
+}
+
+// Step 2: Implement the MediaPlayer interface in Mp3Player
+class Mp3Player implements MediaPlayer {
+    // Mp3Player can only play mp3 files
+    public void play(String audioType) {
+        System.out.println("Playing mp3"); // Print message when playing mp3
+    }
+}
+
+// Step 3: Define the Mp4Player class with its own play method
+class Mp4Player {
+    // Mp4Player has its own method to play mp4 files
+    public void playMp4() {
+        System.out.println("Playing mp4"); // Print message when playing mp4
+    }
+}
+
+// Step 4: Create the MediaAdapter to make Mp4Player work with MediaPlayer
+class MediaAdapter implements MediaPlayer {
+    Mp4Player mp4Player; // Reference to the Mp4Player
+
+    // Constructor initializes Mp4Player object
+    public MediaAdapter() {
+        mp4Player = new Mp4Player(); // Create an instance of Mp4Player
+    }
+
+    // Implement the play method from MediaPlayer interface
+    public void play(String audioType) {
+        // Check if the audio type is mp4
+        if ("mp4".equals(audioType)) {
+            mp4Player.playMp4(); // Call Mp4Player's play method for mp4 files
+        }
+    }
+}
+
+// Step 5: Use the adapter in the client code
+public class Main {
+    public static void main(String[] args) {
+        // Create an Mp3Player object
+        MediaPlayer mp3Player = new Mp3Player();
+        mp3Player.play("mp3"); // Play an mp3 file
+
+        // Create a MediaAdapter object for playing mp4 files
+        MediaPlayer mp4Adapter = new MediaAdapter();
+        mp4Adapter.play("mp4"); // Play an mp4 file using the adapter
+    }
+}
+```
+
+### 7. Bridge Pattern :
+The Bridge Pattern separates an interface from its implementation, allowing changes to one without affecting the other. It uses interfaces and classes to connect without tight coupling, making the code flexible and easy to extend. This approach keeps the code organized and allows for more options.
+```java
+// Color interface
+interface Color {
+    void fill(); // Method to fill a shape with color
+}
+
+// Red color implementation
+class Red implements Color {
+    public void fill() {
+        System.out.println("Filling with Red color");
+    }
+}
+
+// Green color implementation
+class Green implements Color {
+    public void fill() {
+        System.out.println("Filling with Green color");
+    }
+}
+
+// Shape abstract class
+abstract class Shape {
+    protected Color color; // Reference to Color object
+
+    protected Shape(Color color) { // Constructor to initialize Color
+        this.color = color;
+    }
+
+    abstract void draw(); // Abstract method to draw the shape
+}
+
+// Circle shape implementation
+class Circle extends Shape {
+    public Circle(Color color) {
+        super(color); // Initialize the Color in the parent class
+    }
+
+    public void draw() {
+        System.out.print("Drawing Circle: ");
+        color.fill(); // Use the Color to fill the Circle
+    }
+}
+
+// Square shape implementation
+class Square extends Shape {
+    public Square(Color color) {
+        super(color); // Initialize the Color in the parent class
+    }
+
+    public void draw() {
+        System.out.print("Drawing Square: ");
+        color.fill(); // Use the Color to fill the Square
+    }
+}
+
+// Bridge pattern demo class
+public class BridgePatternDemo {
+    public static void main(String[] args) {
+        // Create red and green color objects
+        Color red = new Red();
+        Color green = new Green();
+
+        // Create circle and square objects with different colors
+        Shape circle = new Circle(red);
+        Shape square = new Square(green);
+
+        // Draw the shapes
+        circle.draw(); // Output: Drawing Circle: Filling with Red color
+        square.draw(); // Output: Drawing Square: Filling with Green color
+    }
+}
+```
+### 8. Decorator Pattern :
+The Decorator Pattern lets you add new features or behaviors to individual objects without changing the original object. It wraps the object in a new class that provides additional functionality.
+```java
+// Coffee interface defining methods for getting description and cost
+interface Coffee {
+    String getDescription(); // Method to get the coffee description
+    double cost();           // Method to get the cost of the coffee
+}
+
+// SimpleCoffee class implementing the Coffee interface
+class SimpleCoffee implements Coffee {
+    // Returns the description of the simple coffee
+    public String getDescription() {
+        return "Simple Coffee";
+    }
+
+    // Returns the cost of the simple coffee
+    public double cost() {
+        return 2.0; // Base cost for simple coffee
+    }
+}
+
+// MilkDecorator class implementing the Coffee interface
+class MilkDecorator implements Coffee {
+    private Coffee coffee; // Reference to a Coffee object
+
+    // Constructor that takes a Coffee object to decorate
+    public MilkDecorator(Coffee coffee) {
+        this.coffee = coffee; // Assigns the passed Coffee object to the instance variable
+    }
+
+    // Returns the description of the coffee with milk added
+    public String getDescription() {
+        return coffee.getDescription() + ", Milk"; // Adds "Milk" to the existing description
+    }
+
+    // Returns the total cost including the cost of milk
+    public double cost() {
+        return coffee.cost() + 0.5; // Adds 0.5 for the milk to the existing cost
+    }
+}
+
+// Main class to demonstrate the Decorator Pattern
+public class Main {
+    public static void main(String[] args) {
+        // Create a simple coffee
+        Coffee myCoffee = new SimpleCoffee();
+        System.out.println(myCoffee.getDescription() + " $" + myCoffee.cost());
+
+        // Add milk to the coffee using the MilkDecorator
+        myCoffee = new MilkDecorator(myCoffee);
+        System.out.println(myCoffee.getDescription() + " $" + myCoffee.cost());
+    }
+}
+```
+### 9. Facade Pattern :
+Facade Pattern is a structural design pattern that provides a simplified (but limited) interface to a complex system of classes.
+```java
+// Class representing the CPU component of a computer
+class CPU {
+    void start() { 
+        System.out.println("CPU started"); // Method to start the CPU
+    }
+}
+
+// Class representing the Memory component of a computer
+class Memory {
+    void load() { 
+        System.out.println("Memory loaded"); // Method to load the memory
+    }
+}
+
+// Class representing the Hard Drive component of a computer
+class HardDrive {
+    void read() { 
+        System.out.println("Hard Drive read"); // Method to read data from the hard drive
+    }
+}
+
+// Facade class that simplifies interactions with the computer subsystem
+class ComputerFacade {
+    private CPU cpu;          // Reference to the CPU component
+    private Memory memory;    // Reference to the Memory component
+    private HardDrive hardDrive; // Reference to the Hard Drive component
+
+    // Constructor initializes the components
+    public ComputerFacade() {
+        cpu = new CPU();                   // Create a new CPU instance
+        memory = new Memory();             // Create a new Memory instance
+        hardDrive = new HardDrive();       // Create a new Hard Drive instance
+    }
+
+    // Method to start the computer, which initiates all components
+    public void start() {
+        cpu.start();                       // Start the CPU
+        memory.load();                     // Load the Memory
+        hardDrive.read();                  // Read from the Hard Drive
+    }
+}
+```
+### 10. Flyweight Pattern :
+Reduces memory consumption by sharing objects that are similar.
+```java
+import java.util.HashMap;
+import java.util.Map;
+
+// Flyweight class that holds shared state
+class Flyweight {
+    private String sharedState; // Shared state among Flyweight objects
+
+    // Constructor to initialize shared state
+    public Flyweight(String sharedState) {
+        this.sharedState = sharedState;
+    }
+
+    // Method to perform an operation using both shared and unique states
+    public void operation(String uniqueState) {
+        System.out.println("Shared: " + sharedState + ", Unique: " + uniqueState);
+    }
+}
+
+// FlyweightFactory class to manage Flyweight objects
+class FlyweightFactory {
+    private Map<String, Flyweight> flyweights = new HashMap<>(); // Map to store Flyweight objects
+
+    // Method to get a Flyweight object based on a key
+    public Flyweight getFlyweight(String key) {
+        // If the Flyweight doesn't exist, create a new one and store it
+        if (!flyweights.containsKey(key)) {
+            flyweights.put(key, new Flyweight(key));
+        }
+        // Return the existing Flyweight object
+        return flyweights.get(key);
+    }
+}
+
+// Main class to demonstrate the Flyweight pattern
+public class Main {
+    public static void main(String[] args) {
+        // Create a FlyweightFactory instance
+        FlyweightFactory factory = new FlyweightFactory();
+
+        // Get Flyweight objects with shared state
+        Flyweight flyweight1 = factory.getFlyweight("State1");
+        Flyweight flyweight2 = factory.getFlyweight("State2");
+        Flyweight flyweight3 = factory.getFlyweight("State1"); // This will reuse the existing Flyweight
+
+        // Perform operations with unique state for each Flyweight
+        flyweight1.operation("Unique1");
+        flyweight2.operation("Unique2");
+        flyweight3.operation("Unique3"); // This uses the shared state "State1"
+
+        // Show that flyweight1 and flyweight3 are the same instance
+        System.out.println("flyweight1 and flyweight3 are the same: " + (flyweight1 == flyweight3));
+    }
+}
+```
