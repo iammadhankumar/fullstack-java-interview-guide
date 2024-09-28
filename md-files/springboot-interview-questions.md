@@ -165,6 +165,20 @@ public class CalculatorTest {
     }
 }
 ```
+#### 33. What is interceptors and event listeners in hibernate ?
+* Interceptors provide a way to intercept and modify the behavior of Hibernate operations, such as saving, updating, deleting, or loading entities.
+* Event listeners enable you to respond to specific events that occur during the lifecycle of entities, such as before or after an entity is inserted, updated, or deleted.
+
+#### 34. Explain HTTP Methods ?
+Here’s a brief one-line explanation for each of the main HTTP methods:
+
+* <b>GET:</b> Retrieves data from the server without modifying it.
+* <b>POST:</b> Sends data to the server to create a new resource.
+* <b>PUT:</b> Updates an existing resource or creates it if it doesn't exist.
+* <b>DELETE:</b> Removes a specified resource from the server.
+* <b>HEAD:</b> Similar to GET but only retrieves the headers, not the body.
+* <b>OPTIONS:</b> An OPTIONS request is a type of HTTP method used to query a server about the communication options available for a specific resource.
+* <b>PATCH:</b> Applies partial modifications to a resource.
 
 
 
