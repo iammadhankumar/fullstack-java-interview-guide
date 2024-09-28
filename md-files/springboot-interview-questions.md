@@ -135,6 +135,9 @@ Microservices communicate with each other using several methods like RestAPI, Me
 #### 31. Explain about the API gateway in microservices ?
 An API gateway is a server that acts as a bridge between clients and microservices. Instead of clients communicating directly with each microservice, they send requests to the API gateway. The gateway then routes these requests to the appropriate microservice and returns the response to the client. It helps manage communication, load balancing, and security.
 
+#### 32. How to write junit testcases in spring boot ?
+ To write a JUnit test case, annotate a method with @Test, and inside that method, define the test logic. Use assertions like assertEquals() or assertNull() to check expected outcomes. Ensure the test class is annotated with @RunWith or extend a specific runner if needed.
+
 
 
 
