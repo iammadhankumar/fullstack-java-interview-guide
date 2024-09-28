@@ -137,6 +137,34 @@ An API gateway is a server that acts as a bridge between clients and microservic
 
 #### 32. How to write junit testcases in spring boot ?
  To write a JUnit test case, annotate a method with @Test, and inside that method, define the test logic. Use assertions like assertEquals() or assertNull() to check expected outcomes. Ensure the test class is annotated with @RunWith or extend a specific runner if needed.
+ ```java
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import org.junit.jupiter.api.Test;
+
+public class CalculatorTest {
+
+    @BeforeEach
+    public void setUp() {
+         // Setup before each test
+        System.out.println("Setup completed");
+    }
+
+    @AfterEach
+    public void tearDown() {
+       / Cleanup after each test
+        System.out.println("Cleanup completed");
+    }
+
+
+
+    @Test
+    public void testAdd() {
+        Calculator calc = new Calculator();
+        int result = calc.add(2, 3);
+        assertEquals(5, result, "2 + 3 should equal 5");
+    }
+}
+```
 
 
 
