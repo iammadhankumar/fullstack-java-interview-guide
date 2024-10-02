@@ -180,6 +180,24 @@ Here’s a brief one-line explanation for each of the main HTTP methods:
 * <b>OPTIONS:</b> An OPTIONS request is a type of HTTP method used to query a server about the communication options available for a specific resource.
 * <b>PATCH:</b> Applies partial modifications to a resource.
 
+#### 35. Give me list of common exceptions in Java ?
+* <b>NullPointerException:</b> Occurs when trying to use an object that hasn’t been initialized (is null).
+* <b>ArrayIndexOutOfBoundsException:</b> Happens when trying to access an array element with an invalid index.
+* <b>ClassCastException:</b> Raised when trying to cast an object to a type it doesn’t belong to.
+* <b>ArithmeticException:</b> Occurs when an arithmetic operation goes wrong, like dividing by zero.
+* <b>NumberFormatException:</b> Happens when trying to convert a string to a number but the string isn’t a valid format.
+* <b>FileNotFoundException:</b> Raised when trying to access a file that doesn’t exist.
+* <b>IOException:</b> A general error for issues with input/output operations, like reading or writing files.
+* <b>SQLException:</b> Occurs when there’s a problem with database access or SQL queries.
+* <b>IllegalArgumentException:</b> Happens when a method receives an argument that’s inappropriate or not valid.
+* <b>IndexOutOfBoundsException:</b> Raised when trying to access an index that is out of range for a list or collection.
+* <b>StackOverflowError:</b> Occurs when a program runs out of stack memory, often due to deep or infinite recursion.
+* <b>OutOfMemoryError:</b> Happens when the Java Virtual Machine (JVM) cannot allocate memory for an object.
+* <b>UnsupportedOperationException:</b> Raised when an operation is not supported for the object being used.
+* <b>SecurityException:</b> Occurs when a security violation is detected, such as accessing a restricted resource.
+* <b>ClassNotFoundException:</b> Occurs when an application tries to load a class by its name during runtime but the JVM cannot find it in the classpath.
+* <b>NoClassDefFoundError:</b> Occurs when a class that was available during compile time cannot be found at runtime.
+
 
 
 
