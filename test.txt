@@ -159,3 +159,9 @@ notify() wakes up a thread that is waiting on that object’s lock.
 
 </body>
 </html>
+
+
+
+map(): Transforms each element of a collection individually, returning a new collection of the same structure. For example, it can convert each element in a list of numbers to their squares.
+
+flatMap(): Transforms each element and flattens the result. If each element transformation produces a collection, flatMap() combines all the resulting collections into one.
