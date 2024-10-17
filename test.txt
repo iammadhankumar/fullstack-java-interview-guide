@@ -1,0 +1,161 @@
+import java.util.LinkedList;
+import java.util.Queue;
+
+class ProducerConsumer {
+    private static final int CAPACITY = 5;
+    private final Queue<Integer> queue = new LinkedList<>();
+
+    // Producer class
+    class Producer extends Thread {
+        @Override
+        public void run() {
+            int value = 0;
+            while (true) {
+                synchronized (queue) {
+                    while (queue.size() == CAPACITY) {
+                        try {
+                            System.out.println("Queue is full, Producer is waiting...");
+                            queue.wait();
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                    System.out.println("Produced: " + value);
+                    queue.offer(value++);
+                    queue.notify(); // Notify the consumer
+                }
+            }
+        }
+    }
+
+    // Consumer class
+    class Consumer extends Thread {
+        @Override
+        public void run() {
+            while (true) {
+                synchronized (queue) {
+                    while (queue.isEmpty()) {
+                        try {
+                            System.out.println("Queue is empty, Consumer is waiting...");
+                            queue.wait();
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                    int value = queue.poll();
+                    System.out.println("Consumed: " + value);
+                    queue.notify(); // Notify the producer
+                }
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+        ProducerConsumer pc = new ProducerConsumer();
+
+        Producer producer = pc.new Producer();
+        Consumer consumer = pc.new Consumer();
+
+        producer.start();
+        consumer.start();
+    }
+}
+
+Key points:
+Queue is used as a shared buffer between the producer and the consumer.
+The producer adds items to the queue, while the consumer removes items.
+wait() makes the thread release the lock and go to sleep until another thread calls notify().
+notify() wakes up a thread that is waiting on that object’s lock.
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+    <style>
+        .login-container {
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        button:disabled {
+            background-color: #cccccc;
+        }
+
+        .form-data {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="login-container">
+    <h2>Login</h2>
+    <form id="loginForm">
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" required />
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required />
+        </div>
+        <button type="submit" id="submitBtn">Login</button>
+    </form>
+
+    <div class="form-data" id="formData" style="display:none;">
+        <h3>Form Data:</h3>
+        <p>Username: <span id="displayUsername"></span></p>
+        <p>Password: <span id="displayPassword"></span></p>
+    </div>
+</div>
+
+<script>
+    document.getElementById('loginForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent form from submitting normally
+
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+
+        // Display the form data
+        document.getElementById('displayUsername').innerText = username;
+        document.getElementById('displayPassword').innerText = password;
+
+        document.getElementById('formData').style.display = 'block';
+    });
+</script>
+
+</body>
+</html>
