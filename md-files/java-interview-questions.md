@@ -32,13 +32,16 @@ The JIT (Just-In-Time) compiler is a part of the JVM that converts bytecode into
 <b>Protected:</b> `protected ` modifier makes class members accessible within the same package and by subclasses.</br>
 <b>default(no specifier):</b> `default` or `no access specifier` makes class members accessible only within the same package.
 
-#### 6. What is diamond problem in java ?
+#### 6. What is diamond problem in Java ?
 The diamond problem happens when a class inherits from two classes that share a common parent class, leading confusion which will be the parent class. So java avoids this issue by not supporting multiple inheritance with classes. This is called diamond problem.
 
 #### 7. What is a Marker interface in Java ?
 A marker interface in Java is an empty interface with no methods. It is used to mark a class with a specific property or behavior.</br>
 <b>Serializable:</b> `Serializable` is a marker interface that indicates an object can be serialized.</br>
 <b>Cloneable:</b> `clonable` is a marker interface that indicates an object can be cloned.
+
+#### 8. Explain OOPS Concept in Java ?
+Object-Oriented Programming (OOP) in Java is a programming style that uses the classes and its objects to represent entities and ideas. Its a way of organizing code using objects. It focuses on four main concepts: encapsulation (hiding data), inheritance (sharing properties), polymorphism (using a single interface for different forms), and abstraction (simplifying complex systems).
 
 ### Java Memory Management :
 #### 1. What is the difference between stack and heap memory ?
