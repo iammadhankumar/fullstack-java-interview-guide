@@ -40,9 +40,6 @@ A marker interface in Java is an empty interface with no methods. It is used to 
 <b>Serializable:</b> `Serializable` is a marker interface that indicates an object can be serialized.</br>
 <b>Cloneable:</b> `clonable` is a marker interface that indicates an object can be cloned.
 
-#### 8. Explain OOPS Concept in Java ?
-Object-Oriented Programming (OOP) in Java is a programming style that uses the classes and its objects to represent entities and ideas. Its a way of organizing code using objects. It focuses on four main concepts: encapsulation (hiding data), inheritance (sharing properties), polymorphism (using a single interface for different forms), and abstraction (simplifying complex systems).
-
 ### Java Memory Management :
 #### 1. What is the difference between stack and heap memory ?
 Stack memory stores temporary data like method calls and local variables. 
@@ -69,7 +66,10 @@ The string pool in Java is a special area of memory where unique string values a
 `==` checks if two variables are the same object(i.e., the same memory address), while `equals()` checks if they are equal in value.
 
 ### Object-Oriented Programming :
-#### 1. What are the Object Oriented Features supported by Java ?
+#### 1. Explain OOPS Concept in Java ?
+Object-Oriented Programming (OOP) in Java is a programming style that uses the classes and its objects to represent entities and ideas. Its a way of organizing code using objects. It focuses on four main concepts: encapsulation (hiding data), inheritance (sharing properties), polymorphism (using a single interface for different forms), and abstraction (simplifying complex systems).
+
+#### 2. What are the Object Oriented Features supported by Java ?
 <b>Encapsulation:</b> Encapsulation involves combining both data (variables) and methods into a single unit (class). It hides class variables from other classes and allows access through the class's methods. </br>
 
 <b>Inheritance:</b> Inheritance allows one class to inherit fields and methods from another class. The class that inherits is called the subclass, and the class being inherited from is called the parent class. The extends keyword is used to indicate that one class is inheriting from another. </br>
@@ -83,48 +83,48 @@ The string pool in Java is a special area of memory where unique string values a
 
 <b>Class & Objects:</b> A class is a blueprint for creating objects, defining their characteristics and attributes. It can contain fields, methods, constructors, and interfaces. An object is an instance of a class and is used to access the members of that class.
 
-#### 2. What is abstract class in java ?
+#### 3. What is abstract class in java ?
 An abstract class is a class that cannot be instantiated directly. Its members can be accessed by extending it in another class. It can have method without implentation like interface and with implementations.
 
-#### 3. What is the purpose of an abstract class ?
+#### 4. What is the purpose of an abstract class ?
 The purpose of an abstract class is to provide a base class for other classes, It can define common features and methods that other class can inherit.
 It can have both abstract methods and regular methods. We can override these methods in subclasses.
 
-#### 4. What is interface in java ?
+#### 5. What is interface in java ?
 An interface in Java is a mechanism to achieve abstraction. It can contain a collection of abstract methods that must be implemented by a class using the implements keyword. 
 
-#### 5. Why java doesn't support multiple inhertance ?
+#### 6. Why java doesn't support multiple inhertance ?
 Multiple inheritance means a class inherits from two or more classes, which can lead to conflicts about which parent class's methods to use. That's why Java doesn't support multiple inheritance. Instead, Java uses interfaces, allowing a class to implement multiple interfaces without conflicts.
 
-#### 6. What is constructor in java ?
+#### 7. What is constructor in java ?
 A constructor is used to create and initialize objects. It has the same name as the class and is called automatically when an object is created.
 
-#### 6. What is constructor overloading in java ?
+#### 8. What is constructor overloading in java ?
 Constructor overloading in Java means having multiple constructors in a class with different parameters.  It allows creating objects in different ways, depending on the arguments provided.
 
-#### 7. What is the use of super keyword in Java ?
+#### 9. What is the use of super keyword in Java ?
 The `super` keyword in Java is used to refer to the parent class's methods and constructors. It allows you to access or override methods and constructors from the parent class.
 
-#### 8. What is the difference between method overloading and method overriding ?
+#### 10. What is the difference between method overloading and method overriding ?
 `Method overloading` is when multiple methods in the same class have the same name but different parameters.</br>
 `Method overriding` is when a subclass provides a new implementation for a method that is already defined in its parent class.
 
-#### 9. What is the difference between static methods, static variables, and static classes in Java ?
+#### 11. What is the difference between static methods, static variables, and static classes in Java ?
 `Static methods` and `static variables belong` to the class itself rather than to objects. They can be accessed using class name directly without creating an instance of the class.</br>
 In Java, a top-level class cannot be static. Only nested (inner) classes can be declared static, and these must be accessed through an instance of the outer class.
 
-#### 10. Why aren't classes typically declared as static in Java ?
+#### 12. Why aren't classes typically declared as static in Java ?
 In Java, the keyword `static` is used to define features that belong to a class. `static` members can be accessed directly using class name without creating objects. So concept of static does not apply to top-level classes and it belongs to the class.
 
-#### 11. What is the difference between composition and inheritance ?
+#### 13. What is the difference between composition and inheritance ?
 `Composition ("has-a" relationship)` means that one class contains an object of another class as a member and representing has-a relationship. </br>
 `inheritance ("is-a" relationship)` ` means one class is inherited from another class and representing is-a relationship.
 
-#### 12. Difference between instance variable and local variables ?
+#### 14. Difference between instance variable and local variables ?
 Instance variables are declared inside a class but outside methods,and they belong to an object of the class. They can be accessed and modified by any method in the class. </br>
 Local variables are declared inside a method or block are accessible only with in the block.
 
-#### 13. Difference between constructor and method ?
+#### 15. Difference between constructor and method ?
 A `constructor` is a special block of code that runs when an object is created. Its main purpose is to create and initialize the object. It has the same name as the class and does not have a return type. </br>
 A `method` is a regular function defined in a class that performs actions or calculations, It can be called by using the object of the class and mostly it can return value except void method.
 
