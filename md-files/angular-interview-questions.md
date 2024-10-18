@@ -74,3 +74,9 @@ Types of decorators :</br>
 @HostListener: Binds a method to a DOM event on the host element of a component or directive.</br>
 @HostBinding: Binds a property of a component or directive to a property of its host element.
 
+#### 10. What is Observable in Angular ?
+Observables in Angular are a powerful mechanism for handling asynchronous operations. They are part of the Reactive Extensions for JavaScript (RxJS) library.
+* <b>Asynchronous Operations:</b> Observables are ideal for handling HTTP requests, user input events, and other asynchronous operations.
+* <b>Data Streams:</b> They can manage streams of data, such as real-time updates from a server.
+* <b>Powerful Operators:</b> RxJS provides a rich set of operators to transform, filter, and combine Observables.
+
