@@ -45,3 +45,11 @@ To prevent this
 * <b>Load Balancing:</b> Distribute traffic across multiple servers to prevent overload.
 * <b>Minimize Resource Usage:</b> Reduce the size of assets (images, CSS, JS) and use compression.
 * <b>Monitoring and Profiling:</b> Continuously monitor application performance and profile code to identify slow areas.
+
+### 8. What are all the design patterns you have used ?
+* <b>Singleton:</b> Ensures a class has only one instance and provides a global point of access.
+* <b>Factory Method:</b> Defines an interface for creating objects but lets subclasses alter the type of created objects.
+* <b>Observer:</b> Allows an object to notify other objects about changes in its state, promoting loose coupling.
+* <b>Strategy:</b> Enables selecting an algorithm's behavior at runtime, allowing for dynamic changes.
+* <b>Decorator:</b> Adds new functionality to an object dynamically without altering its structure.
+* <b>Builder:</b> Facilitates constructing complex objects step by step, improving code readability and maintainability.
