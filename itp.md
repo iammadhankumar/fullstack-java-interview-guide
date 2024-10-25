@@ -78,3 +78,9 @@ Model/Entity Layer: Defines data structures, typically in an entity or model pac
 DTOs (Data Transfer Objects): Used to transfer data between layers without exposing internal structures, found in a dto package.
 
 Configuration: Contains configuration classes for setting up security, CORS, or application properties, typically placed in a config package.
+
+### 12. How do you call a databases ?
+In our Spring Boot application, database calls start in the controller, which delegates the request to the service layer. The service then interacts with the repository layer, where Spring Data JPA manages the database operations through predefined methods. Finally, the repository translates these calls into SQL queries to interact with the database.
+
+### 13. How do you secure your credentials ?
+We keep the database name and password safe by using environment variables and special configuration files. We also use tools like Spring Cloud Config and Vault to manage sensitive information securely without putting it directly in the code.
