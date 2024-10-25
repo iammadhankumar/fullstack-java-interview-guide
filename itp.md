@@ -53,3 +53,13 @@ To prevent this
 * <b>Strategy:</b> Enables selecting an algorithm's behavior at runtime, allowing for dynamic changes.
 * <b>Decorator:</b> Adds new functionality to an object dynamically without altering its structure.
 * <b>Builder:</b> Facilitates constructing complex objects step by step, improving code readability and maintainability.
+
+### 9. What are the microservices pattern you have used ?
+In my experience, I’ve worked with the API Gateway pattern, which provides a single entry point for all client requests and routes them to the appropriate services. This enhances security, scalability, and simplifies client interactions.
+
+I’ve also used the Circuit Breaker pattern to prevent cascading failures by stopping calls to a failing service, ensuring system stability and reliability.
+
+These patterns have been essential in building resilient and scalable microservices architectures.
+
+### 10. Do you have completed any courses ?
+I’ve taken several courses through platforms like Udemy, including AWS-focused courses, to deepen my understanding of cloud services. While I haven’t pursued official certifications yet, I’m always learning to stay up-to-date with the latest skills.
