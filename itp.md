@@ -63,3 +63,18 @@ These patterns have been essential in building resilient and scalable microservi
 
 ### 10. Do you have completed any courses ?
 I’ve taken several courses through platforms like Udemy, including AWS-focused courses, to deepen my understanding of cloud services. While I haven’t pursued official certifications yet, I’m always learning to stay up-to-date with the latest skills.
+
+### 11. What is the spring boot code structure you are following in current office ?
+In my current office, we follow a modular, layered structure for Spring Boot applications to keep the code organized and maintainable:
+
+Controller Layer: Handles incoming HTTP requests, typically located in a controller or web package. Each controller maps to endpoints for specific business functionalities.
+
+Service Layer: Contains business logic and is usually placed in a service package. This layer processes data received from the controller before passing it to the repository.
+
+Repository Layer: Interfaces with the database, often using JPA or Hibernate. The repository interfaces are in a repository or dao package, ensuring separation of data access from business logic.
+
+Model/Entity Layer: Defines data structures, typically in an entity or model package. This layer includes classes mapped to database tables.
+
+DTOs (Data Transfer Objects): Used to transfer data between layers without exposing internal structures, found in a dto package.
+
+Configuration: Contains configuration classes for setting up security, CORS, or application properties, typically placed in a config package.
