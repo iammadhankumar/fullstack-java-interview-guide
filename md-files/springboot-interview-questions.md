@@ -109,43 +109,37 @@ Authorizations gives the access to resources after successful authentication. ex
 #### 24. Tell me about Role-based Access control ?
 Role-Based Access Control (RBAC) is a way to manage permissions in an application. Instead of giving permissions to each user individually, users are assigned to roles, and each role has specific permissions. For example, an `Admin` role might have access to everything, while a `User` role might only access certain features.
 
-#### 25. What is hibernate in spring boot ?
-Hibernate is a framework in Java that simplifies database interactions by mapping Java objects to database tables. It provides several features to interact with relational databases, including: </br>
-<b>ORM:</b> Maps Java objects to database tables, allowing for easy manipulation. </br>
-<b>Entity Relationships:</b> Manages complex relationships between entities (e.g., one-to-many, many-to-one).</br>
-<b>Transaction Management:</b> Handles transactions to ensure data consistency and integrity.
-
-#### 26. What is JPA ?
+#### 25. What is JPA ?
 JPA (Java Persistant API) is specification that provides set of rules and interfaces for managing relational database in Java applications. It supports entity manager, TypedQuery, Creteria query for mapping the java objects into database tables.
 
-#### 27. What is @Transactional annotation ?
+#### 26. What is @Transactional annotation ?
 The `@Transactional' annotation ensures that a series of queries are completed together successfully or none at all. It helps keep data consistent by rolling back changes if an error happens.
 
-#### 28. What is microservices ?
+#### 27. What is microservices ?
 Microservices is an architectural style used to break down large applications into smaller, independent services. Each service has its own codebase.
 
-#### 29. Explain about some microservices patterns ?
+#### 28. Explain about some microservices patterns ?
 * <b> API Gateway Pattern:</b> The API Gateway microservices pattern acts as a single entry point for all client requests. Gateway Service act as a single entry point that gets the request from client and routing them to the appropriate microservices. It handles tasks like authentication, rate limiting, and load balancing, simplifying the communication between clients and multiple backend services.
 * <b> Circuit Breaker Pattern:</b> The Circuit Breaker microservices pattern prevents a service from repeatedly trying to call a failing service. If a service is down or slow, the circuit "opens" to stop calls temporarily blocking any further requests to it. It helps prevent cascading failures by managing service failures.
 
-#### 30. What are the components of microservices ?
+#### 29. What are the components of microservices ?
 <b>Services:</b> small and independent services that has to do jobs.</br>
 <b>API Gateway:</b> Handles the client request and distributes to the right services.</br>
 <b>Service Registry:</b> It stores the information about the services that is running or not.
 
-#### 31. How micro services are communicating with each other and explain it ?
+#### 30. How micro services are communicating with each other and explain it ?
 Microservices communicate with each other using several methods like RestAPI, Message queues, gRPC.
 
-#### 32. Explain about the API gateway in microservices ?
+#### 31. Explain about the API gateway in microservices ?
 An API gateway is a server that acts as a bridge between clients and microservices. Instead of clients communicating directly with each microservice, they send requests to the API gateway. The gateway then routes these requests to the appropriate microservice and returns the response to the client. It helps manage communication, load balancing, and security.
 
-#### 33. What is synchronous and asynchronous communication ?
+#### 32. What is synchronous and asynchronous communication ?
  * <b> Synchronous Communication:</b> Synchronous communication is when one service sends a request and waits for a response before moving to further tasks.
     Ex. API Calls
  * <b> Asynchronous communication:</b> Asynchronous communication is when a service sends a request and doesn’t wait for a response, allowing it to continue 
      further tasks. Ex. Kafka, RabbitMQ
 
-#### 34. How to write junit testcases in spring boot ?
+#### 33. How to write junit testcases in spring boot ?
  To write a JUnit test case, annotate a method with @Test, and inside that method, define the test logic. Use assertions like assertEquals() or assertNull() to check expected outcomes. Ensure the test class is annotated with @RunWith or extend a specific runner if needed.
  ```java
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -175,11 +169,7 @@ public class CalculatorTest {
     }
 }
 ```
-#### 35. What is interceptors and event listeners in hibernate ?
-* Interceptors provide a way to intercept and modify the behavior of Hibernate operations, such as saving, updating, deleting, or loading entities.
-* Event listeners enable you to respond to specific events that occur during the lifecycle of entities, such as before or after an entity is inserted, updated, or deleted.
-
-#### 36. Explain HTTP Methods ?
+#### 34. Explain HTTP Methods ?
 Here’s a brief one-line explanation for each of the main HTTP methods:
 
 * <b>GET:</b> Retrieves data from the server without modifying it.
@@ -190,7 +180,7 @@ Here’s a brief one-line explanation for each of the main HTTP methods:
 * <b>OPTIONS:</b> An OPTIONS request is a type of HTTP method used to query a server about the communication options available for a specific resource.
 * <b>PATCH:</b> Applies partial modifications to a resource.
 
-#### 37. Give me list of common exceptions in Java ?
+#### 35. Give me list of common exceptions in Java ?
 * <b>NullPointerException:</b> Occurs when trying to use an object that hasn’t been initialized (is null).
 * <b>ArrayIndexOutOfBoundsException:</b> Happens when trying to access an array element with an invalid index.
 * <b>ClassCastException:</b> Raised when trying to cast an object to a type it doesn’t belong to.
