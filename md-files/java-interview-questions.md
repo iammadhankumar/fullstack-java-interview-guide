@@ -165,6 +165,10 @@ The Stream API in Java is used to process collections of data. It allows filteri
 #### 6. Explain about Optional class ?
 Optional is a class that may or may not hold a value. It helps avoid NullPointerException by providing methods to check if a value is present. It handles null cases more safely and clearly.
 
+* Optional.of(): Creates an Optional containing a non-null value; it throws a NullPointerException if the value is null.
+
+* Optional.ofNullable(): Creates an Optional that can contain either a non-null value or be empty (null-safe).
+
 #### 7. Explain about new Date-Time API ?
 The new Date-Time API in Java simplifies working with dates and times. It is part of the java.time package and makes it easier to handle time zones and perform calculations.
 
