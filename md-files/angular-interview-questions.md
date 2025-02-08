@@ -80,3 +80,34 @@ Observables in Angular are a powerful mechanism for handling asynchronous operat
 * <b>Data Streams:</b> They can manage streams of data, such as real-time updates from a server.
 * <b>Powerful Operators:</b> RxJS provides a rich set of operators to transform, filter, and combine Observables.
 
+#### key features introduced in Angular versions 9 to 12?
+
+<b><h4>Angular 9 (Feb 2020):</h4></b>
+* <b>Ivy Renderer (Default)</b> – Improved build times, smaller bundle sizes, and better debugging.  
+* <b>Smaller Bundle Size</b> – Reduction in size by removing unused code (tree-shaking).  
+* <b>Improved Debugging</b> – `ng.getComponent()` for debugging in DevTools.  
+* <b>Faster Testing</b> – Optimized TestBed to avoid recompiling unnecessary files.  
+* <b>Internationalization (i18n) Improvements</b> – More efficient and lightweight handling of translations.  
+* <b>Component Harnesses</b> – Better testing utilities for Angular Material components.  
+
+<b><h4>Angular 10 (June 2020):</h4></b>
+* <b>New Date Range Picker</b> – Introduced in Angular Material.  
+* <b>Performance Improvements</b> – Reduced entry point size for faster builds.  
+* <b>Optional Stricter Settings (`ng new --strict`)</b> – Enables better maintainability and performance optimizations.  
+* <b>Deprecation & Cleanup</b> – Deprecated older browser support (e.g., IE 9 & 10) and outdated features.  
+* <b>TypeScript 3.9 Support</b> – Improved compiler performance and error messaging.  
+
+<b><h4>Angular 11 (Nov 2020):</h4></b>
+* <b>Faster Builds & Hot Module Replacement (HMR) Support</b> – Enabled via `ng serve --hmr`.  
+* <b>Automatic Font Inlining</b> – Optimized web performance by inlining fonts.  
+* <b>Improved Logging & Reporting</b> – Better CLI error messages and warnings.  
+* <b>Updated Language Service</b> – Improved autocompletion and refactoring in VS Code.  
+* <b>TypeScript 4.0 Support</b> – New language features and stricter type checks.  
+
+<b><h4>Angular 12 (May 2021):</h4></b>
+* <b>View Engine Deprecated</b> – Complete shift towards Ivy.  
+* <b>Strict Mode by Default</b> – Improves type safety and performance.  
+* <b>Standalone Component Support</b> – Future-proofing for module-less architecture.  
+* <b>Nullish Coalescing (`??`) in Templates</b> – More readable expressions.  
+* <b>CSS Module Support</b> – Allows importing `.css` files directly into components.  
+* <b>Webpack 5 Support</b> – Faster builds and improved module federation.  
