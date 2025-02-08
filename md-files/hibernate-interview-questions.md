@@ -48,7 +48,7 @@ The key Hibernate annotations used for mapping are,
 * `@Column` - maps a field to a table column
 * `@OneToMany, @ManyToOne` - for defining relationships between entities.
 
-#### 2. What is interceptors and event listeners in hibernate ?
+#### 11. What is interceptors and event listeners in hibernate ?
 * Interceptors provide a way to intercept and modify the behavior of Hibernate operations, such as saving, updating, deleting, or loading entities.
 * Event listeners enable you to respond to specific events that occur during the lifecycle of entities, such as before or after an entity is inserted, updated, or deleted.
 
