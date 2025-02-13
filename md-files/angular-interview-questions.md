@@ -104,17 +104,63 @@ export class LoggerService {
 }
 
    ```
+<b>ii) Property Decorators:</b></br>
+Used to define properties inside a class and configure them.</br>
+@Input: allows a parent component to pass data to a child component.</br>
+@Output: allows a child component to emit events to a parent component.</br></br>
 
-</br>
+<b>iii) Method Decorators:</b></br>
+Method decorators in Angular are used to modify or extend the behavior of methods in a class.</br>
+@HostListener: @HostListener() is used to listen to DOM events on the host element in Angular.</br>
+```typescript
+// COMPONENT
+import { Directive, HostListener } from '@angular/core';
 
-* <b>Property Decorators:</b></br>
-@Input: Marks a property as an input, allowing data to be passed into the component from its parent.</br>
-@Output: Marks a property as an output, allowing the component to emit events to its parent.</br></br>
+@Directive({
+  selector: '[appClick]'
+})
+export class ClickDirective {
+  @HostListener('click', ['$event']) onClick(event: Event) {
+    console.log('Element clicked!', event);
+  }
+}
 
-* <b>Method Decorators:</b></br>
-@HostListener: Binds a method to a DOM event on the host element of a component or directive.</br>
-@HostBinding: Binds a property of a component or directive to a property of its host element.
+// HTML
+<button appClick>Click Me</button>
+```
+@HostBinding: @HostBinding() allows a directive to dynamically bind properties or styles to the host element.
+```typescript
+// COMPONENT
+import { Directive, HostBinding, HostListener } from '@angular/core';
 
+@Directive({
+  selector: '[appHighlight]'
+})
+export class HighlightDirective {
+
+  // Bind the background-color style to the host element
+  @HostBinding('style.backgroundColor') backgroundColor: string = 'transparent';
+
+  // Change background on mouse enter
+  @HostListener('mouseenter') onMouseEnter() {
+    this.backgroundColor = 'yellow';
+  }
+
+  // Revert background on mouse leave
+  @HostListener('mouseleave') onMouseLeave() {
+    this.backgroundColor = 'transparent';
+  }
+}
+
+// HTML
+<p appHighlight>Hover over me to change background color!</p>
+```
+<b>iv) Parameter Decorators:</b>
+A Parameter Decorator is used to inject dependencies into a class constructor in Angular.</br>
+@Inject(): @Inject is used to manually inject a dependency into a class constructor.
+```typescript
+constructor(@Inject(AppService) private appService: AppService) { }
+```
 #### 10. What is Observable in Angular ?
 Observables in Angular are a powerful mechanism for handling asynchronous operations. They are part of the Reactive Extensions for JavaScript (RxJS) library.
 * <b>Asynchronous Operations:</b> Observables are ideal for handling HTTP requests, user input events, and other asynchronous operations.
