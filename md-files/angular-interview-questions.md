@@ -5,7 +5,7 @@ Angular is a framework for building web applications. It helps developers create
 It handles the user input, displaying data and connecting to the backend services.
 
 #### 2. What is typescript ?
-* `TypeScript` is a programming language that builds on JavaScript by adding som addition features. It allows you to define the data types of variables, functions, and properties.</br>
+* `TypeScript` is a programming language that builds on JavaScript by adding some additional features. It allows you to define the data types of variables, functions, and properties.</br>
 * Features of typescript : Static Typing, Optional Typing , Interfaces and Classes, Type interference.
 
 #### 3. how to create angular application ?
@@ -60,11 +60,52 @@ Routing in angular is used to navigate the one web page to another without requi
   
 #### 9. What is decorators in angular ?
 Decorators are special markers of the classes and its members. They allow you to modify the behavior of a class, methods or its members without directly modifying their source code.  They are denoted by the @ symbol followed by the decorator's name.</br></br>
-Types of decorators :</br>
-* <b>Class Decorators:</b></br>
-@Component: The most common decorator, used to define Angular components. It provides metadata such as the component's selector, template, styles.</br>
-@NgModule: Used to define Angular modules, which group components, directives, pipes, and services.</br>
-@Injectable: Marks a class as an injectable service, allowing it to be used in dependency injection.</br></br>
+#### Types of decorators :</br>
+ <b>i) Class Decorators:</b></br>
+@Component: Used to create UI components. It provides metadata such as the component's selector, template, styles.</br>
+  ##### Example:
+```typescript
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-hello',
+  template: `<h1>Hello, Angular!</h1>`
+})
+export class HelloComponent { }
+
+```
+@NgModule: Used to group components, directives, and services into a module. </br>
+ ##### Example:
+ ```typescript
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { HelloComponent } from './hello.component';
+import { HighlightDirective } from './highlight.directive';
+
+@NgModule({
+  declarations: [HelloComponent, HighlightDirective],
+  imports: [BrowserModule],
+  bootstrap: [HelloComponent]
+})
+export class AppModule { }
+```
+@Injectable: Marks a class as an injectable service, allowing it to be used in dependency injection.
+##### Example:
+   ```typescript
+import { Injectable } from '@angular/core';
+
+@Injectable({
+  providedIn: 'root' // This makes the service available globally
+})
+export class LoggerService {
+  log(message: string) {
+    console.log(`LoggerService: ${message}`);
+  }
+}
+
+   ```
+
+</br>
 
 * <b>Property Decorators:</b></br>
 @Input: Marks a property as an input, allowing data to be passed into the component from its parent.</br>
