@@ -156,30 +156,53 @@ The lambda () -> System.out.println("Hello, World!") simplifies the code to just
 Functional interfaces are interfaces with just one abstract method (but can have multiple default or static methods). It is used for functional programming. They enable functional programming by using lambda expressions or method references.</br>
 For example, `Runnable` is a functional interface because it has only one method `run()`.
 
-#### 4. What is Method References ?
+#### 4. Types of functional interfaces ?
+Java provides several built-in functional interfaces under the java.util.function package.</br>
+##### Function:
+- **Abstract Method:** `R apply(T t)`  
+- **Description:** Takes one input, returns one output
+- **Example:** ```java Function<Integer, Integer> square = x -> x * x; ```
+##### Predicate:
+- **Abstract Method:** `R apply(T t)`  
+- **Description:** Takes one input, returns true/false	
+- **Example:** ```java Predicate<Integer> isEven = x -> x % 2 == 0; ```
+##### Consumer:
+- **Abstract Method:** `void accept(T t)`  
+- **Description:** Takes one input, returns nothing (used for actions like printing)
+- **Example:** ```java Consumer<String> print = System.out::println; ```
+##### Supplier:
+- **Abstract Method:** `T get()`  
+- **Description:** Takes no input, returns a value	
+- **Example:** ```java Supplier<Double> randomNumber = Math::random; ```
+##### UnaryOperator:
+- **Abstract Method:** `T apply(T t)`  
+- **Description:** Takes one input and returns one output, but input and output are the same type
+- **Example:** ```java UnaryOperator<Integer> increment = num -> num + 1; ```
+
+#### 5. What is Method References ?
 Method references are a simple way to use existing methods with lambda expressions. A method can be referred to directly by using the class name, which simplifies the code. </br> For example, `String::toLowerCase` directly uses the `toLowerCase` method of the String class.
 
-#### 5. Explain about Stream API ?
+#### 6. Explain about Stream API ?
 The Stream API in Java is used to process collections of data. It allows filtering, mapping, and combining data in a simple and readable way. Streams can handle large amounts of data efficiently and support parallel processing.
 
-#### 6. Explain about Optional class ?
+#### 7. Explain about Optional class ?
 Optional is a class that may or may not hold a value. It helps avoid NullPointerException by providing methods to check if a value is present. It handles null cases more safely and clearly.
 
 * Optional.of(): Creates an Optional containing a non-null value; it throws a NullPointerException if the value is null.
 
 * Optional.ofNullable(): Creates an Optional that can contain either a non-null value or be empty (null-safe).
 
-#### 7. Explain about new Date-Time API ?
+#### 8. Explain about new Date-Time API ?
 The new Date-Time API in Java simplifies working with dates and times. It is part of the java.time package and makes it easier to handle time zones and perform calculations.
 
-#### 8. What is forEach method in Java ?
+#### 9. What is forEach method in Java ?
 The forEach() method is used to iterate over elements in a collection or stream. It was introduced in Java 8 as part of the Stream API and performs an action on each item in the collection or stream.
 
-#### 9. What default and static methods in interfaces ?
+#### 10. What default and static methods in interfaces ?
 `Default methods` in interfaces provide a default implementation that can be implemented by classes.</br>
 `Static method`s belong to the interface itself and can be called without creating an instance.
 
-#### 10. What is Collectors class in the Stream API ?
+#### 11. What is Collectors class in the Stream API ?
 The Collectors class in the Stream API helps to collect results from a stream into different forms like lists, sets and maps.
 
 ### Exception Handling :
