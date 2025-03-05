@@ -5,6 +5,21 @@ Spring Boot is a framework that simplifies building Java applications. It provid
 <b>Key Features of Spring Boot :</b> </br>
 Auto-configuration, Embedded servers, Starter dependencies.
 
+#### 2. Explain Spring application layer ?
+A Spring Boot application follows a layered architecture, where each layer has a specific responsibility. This structure makes the application modular, maintainable, and scalable. </br>
+<h4> 1. Presentation Layer (Controller Layer):</h4>
+ <b>Role:</b> Handles incoming HTTP requests from users and sends responses.</br>
+ <b>Uses:</b> @RestController, @Controller, @RequestMapping.</br>
+<h4> 2. Service Layer (Business Logic Layer):</h4>
+ <b>Role:</b>  Implements business logic and communicates with the repository layer.</br>
+ <b>Uses:</b> @Service</br>
+<h4> 3. Repository Layer (Data Access Layer):</h4>
+ <b>Role:</b>  Interacts with the database (fetching and storing data).</br>
+ <b>Uses:</b>@Repository, @JpaRepository</br>
+<h4> 4. Model Layer (Entity Layer):</h4>
+ <b>Role:</b>Defines the structure of database tables.</br>
+ <b>Uses:</b>@Entity, @Table</br>
+
 #### 2. Explain the benefits of spring boot ?
 <b>Quick Setup:</b> Spring Boot simplifies setting up and running Java applications with minimal configuration</br>
 <b>Easy Deployment:</b> Spring Boot applications can be packaged as self-contained JAR files, making deployment easy.</br>
