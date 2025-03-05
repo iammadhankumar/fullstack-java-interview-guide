@@ -153,7 +153,7 @@ Runnable r = () -> System.out.println("Hello, World!");</br>
 The lambda () -> System.out.println("Hello, World!") simplifies the code to just one line.
 
 #### 3. What is Functional Interfaces ?
-Functional interfaces are interfaces with just one abstract method. They can be implemented using lambda expressions or method references.</br>
+Functional interfaces are interfaces with just one abstract method (but can have multiple default or static methods). It is used for functional programming. They enable functional programming by using lambda expressions or method references.</br>
 For example, `Runnable` is a functional interface because it has only one method `run()`.
 
 #### 4. What is Method References ?
