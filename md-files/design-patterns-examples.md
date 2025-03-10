@@ -22,6 +22,86 @@ public class Singleton {
     }
 }
 ```
+#### Real-time examples of the Singleton Pattern:
+<b>Logger Class:</b> Shared logging instance.</br>
+<b>Database Connection Pool:</b> Single connection object shared.</br>
+<b>Cache:</b> Single cache instance used across the application.</br>
+<b>Thread Pool:</b> Single thread pool for executing tasks.
+
+#### Why do we use a private constructor in Singleton:
+The private constructor restricts the instantiation of the class from outside. It ensures that only one instance of the class can exist.
+
+#### We can create a Singleton class using Enum:
+Yes, Enum is the safest way to create a Singleton.
+```java
+public enum Singleton {
+    INSTANCE;
+    public void doSomething() {
+        System.out.println("Doing something...");
+    }
+}
+```
+### How to make Singleton Thread-safe:
+We can make it thread-safe using synchronized keyword:</br>
+```java
+public class Singleton {
+    private static Singleton instance;
+
+    private Singleton() {}
+
+    public static synchronized Singleton getInstance() {
+        if (instance == null) {
+            instance = new Singleton();
+        }
+        return instance;
+    }
+}
+```
+#### What is Double-checked Locking in Singleton and Why is it best:
+Double-checked locking in Singleton ensures that only one instance of a class is created, even in multithreading. It improves performance by using a synchronized block only once when the instance is created.</br>
+It is called double-checked because:</br>
+* <b>First check:</b> It quickly checks if the object is already created without locking the thread (for fast access).
+* <b>Second check:</b> If not created, it locks the block and again checks to avoid creating multiple objects by different threads.
+```java
+public class Singleton {
+    private static volatile Singleton instance;
+
+    private Singleton() {}
+
+    public static Singleton getInstance() {
+        if (instance == null) {
+            synchronized (Singleton.class) {
+                if (instance == null) {
+                    instance = new Singleton();
+                }
+            }
+        }
+        return instance;
+    }
+}
+```
+* The use of volatile prevents memory inconsistencies.
+* The double-check avoids unnecessary locking once the instance is created.
+  
+#### What is Bill Pugh Singleton Design Pattern:
+Bill Pugh Singleton uses an Inner Static Class to create a Singleton.</br>
+<b>Advantages:</b> </br>
+* Lazy initialization.
+* Thread-safe without synchronization.
+* Efficient memory usage.
+```java
+public class Singleton {
+    private Singleton() {}
+
+    private static class SingletonHelper {
+        private static final Singleton INSTANCE = new Singleton();
+    }
+
+    public static Singleton getInstance() {
+        return SingletonHelper.INSTANCE;
+    }
+}
+```
 ### 2. Factory Pattern :
 The Factory Pattern is a way to create objects without specifying the exact class. Instead, it provides a general method for creating objects, and specific subclasses decide which type to create.
 ```java
