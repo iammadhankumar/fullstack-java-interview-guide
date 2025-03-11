@@ -52,7 +52,7 @@ public class TwoSum {
 }
 ```
 ### 3. Explain security implementation in Rest API in spring boot ?
-**Answer:**  
+**Answer:**  </br>
 In Spring Boot REST API, security is mainly implemented using Spring Security.
   * <b>Authentication:</b> It verifies users by using their credentials like username and password.
   * <b>Authorization:</b> It checks what you can access based on your role (like ADMIN, USER).
@@ -86,7 +86,7 @@ public class SecurityConfig {
 }
 ```
 ### 4. Write rest controller implementation for crud operations in spring boot ?
-**Answer:**  
+**Answer:**  </br>
 Here is a simple CRUD (Create, Read, Update, Delete) REST Controller in Spring Boot:</br>
 ```java
 import org.springframework.beans.factory.annotation.Autowired;
@@ -143,6 +143,115 @@ public class EmployeeController {
 * GET → To fetch all employees or a specific employee by ID.
 * PUT → To update employee details.
 * DELETE → To delete an employee by ID.
+  
+### 5. How to handle exception from Rest API in spring boot ?
+**Answer:**</br>
+In Spring Boot, you can handle exceptions in REST APIs using @ControllerAdvice along with @ExceptionHandler. This approach ensures that whenever an exception occurs, it will return a proper error response (like 404, 500, etc.) in JSON format.</br></br>
+
+<b>Step 1: Create Global Exception Handler</b></br>
+```java
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.RestControllerAdvice;
+
+@RestControllerAdvice
+public class GlobalExceptionHandler {
+
+    // Handle Resource Not Found Exception
+    @ExceptionHandler(ResourceNotFoundException.class)
+    public ResponseEntity<String> handleResourceNotFoundException(ResourceNotFoundException ex) {
+        return new ResponseEntity<>(ex.getMessage(), HttpStatus.NOT_FOUND);
+    }
+
+    // Handle Generic Exception
+    @ExceptionHandler(Exception.class)
+    public ResponseEntity<String> handleGlobalException(Exception ex) {
+        return new ResponseEntity<>("Something went wrong! " + ex.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
+    }
+}
+```
+<b>Step 2: Create Custom Exception Class</b></br>
+```java
+public class ResourceNotFoundException extends RuntimeException {
+    public ResourceNotFoundException(String message) {
+        super(message);
+    }
+}
+```
+<b> Step 3: Throw Exception From Controller</b></br>
+```java
+@GetMapping("/{id}")
+public ResponseEntity<Employee> getEmployeeById(@PathVariable Long id) {
+    Employee employee = employeeService.getEmployeeById(id);
+    if (employee == null) {
+        throw new ResourceNotFoundException("Employee not found with ID: " + id);
+    }
+    return ResponseEntity.ok(employee);
+}
+```
+### 6. Difference between Authentication and Authorization ?
+**Answer:** </br>
+<b>Authentication:</b></br>
+* Authentication is used to check the user is valid or not.
+* It checks the user's username and password or any credentials.
+* Example: Login Page →  enter your email/password → System verifies if it's valid or not. If it is valid, user will be authenticated.</br></br>
+
+<b>Authorization:</b></br>
+* Authorization is used for giving the access to the users after authentication.
+* It provides access to the users based on roles(ADMIN, USER).
+* Example: After login → ADMIN can access all APIs and USER can access limited APIs.</br></br>
+
+<b>Simple Example:</b></br>
+ * <b>Authentication:</b> → Checking your ID Card at the office gate.</br>
+ * <b>Authorization:</b> → Deciding whether you can enter the CEO's cabin or just your department.
+### 7. Professional challenges faced in earlier projects ?
+* <b>Handling Tight Deadlines:</b>  Sometimes, I had tight deadlines to deliver a project/module.
+* <b>Debugging Complex Issues in Production:</b>  critical bug reported in production and its root cause analysis.
+* <b>Working with Legacy Code:</b>  In one of my projects, I had to work with legacy code that had minimal documentation and was built with older technology.
+* <b>Managing Client Expectations:</b> In some projects, the client's requirements kept changing frequently.
+### 8. What is Polymorphism? Provide a real-time example for it ?
+Polymorphism allows an object of a subclass to be treated as an object of its superclass.</br>
+<b>Real-time Example:</b></br>
+Payment is a main class that supports multiple payment methods like Credit Card, UPI, Netbanking.</br>
+<b>Code Example:</b></br>
+```java
+class Payment {
+    void pay() {
+        System.out.println("Processing Payment");
+    }
+}
+
+class CreditCard extends Payment {
+    @Override
+    void pay() {
+        System.out.println("Payment done using Credit Card");
+    }
+}
+
+class UPI extends Payment {
+    @Override
+    void pay() {
+        System.out.println("Payment done using UPI");
+    }
+}
+
+public class PaymentTest {
+    public static void main(String[] args) {
+        Payment payment;
+
+        payment = new CreditCard();
+        payment.pay();  // Output: Payment done using Credit Card
+
+        payment = new UPI();
+        payment.pay();  // Output: Payment done using UPI
+    }
+}
+```
+
+
+
+
 
 
 
