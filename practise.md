@@ -248,6 +248,163 @@ public class PaymentTest {
     }
 }
 ```
+### 9. What this snippet will print?
+<b>Given Code:</b>
+```java
+class A {
+    public void getA() {
+        System.out.println("A");
+    }
+
+    public static void strip() {
+        System.out.println("Strip A");
+    }
+}
+
+class B extends A {
+    public void getA() {
+        System.out.println("B");
+    }
+
+    public static void strip() {
+        System.out.println("Strip B");
+    }
+}
+
+public class Test {
+    public static void main(String[] args) {
+        A a = new B();
+        a.getA();
+        a.strip();
+    }
+}
+```
+* Here, the code trying to create an object of B and assign it to reference A.
+* BUT — class B does not extend class A (B is not a child of A).
+* Java doesn't know the relationship between A and B, so it will throw a compilation error.
+* Compilation Error -> Incompatible types: B cannot be converted to A
+### 10. What is Functional Interface in Java ?
+* A Functional Interface is an **interface that has exactly one abstract method (but can have multiple default or static methods).
+* It is mainly used for functional programming using Lambda Expressions, Method References, and Streams API.
+* It is annotated with @FunctionalInterface (optional but recommended).</br>
+<b>Why Is It Used?</b></br>
+* It is mainly used to write clean and concise code using Lambda Expressions instead of traditional Anonymous classes.
+* Helps in functional programming.</br>
+
+<b>Example of Functional Interface:</b></br>
+```java
+@FunctionalInterface
+interface Calculator {
+    int add(int a, int b);  // Only one abstract method
+}
+```
+<b>Using lambda expression:</b></br>
+```java
+public class Test {
+    public static void main(String[] args) {
+        Calculator calc = (a, b) -> a + b;
+        System.out.println(calc.add(5, 3));  // Output: 8
+    }
+}
+```
+### 11. What is default keyword?
+* The default keyword in Java is used to create a method with a body in the interfaces.
+* Before Java 8, interfaces could only have abstract methods (no body).
+* From Java 8, you can define default methods with a body using the default keyword.
+* We can use the default method directly without overriding it.
+<b>Example:</b></br>
+```java
+interface Vehicle {
+    void start();
+
+    default void fuelType() {
+        System.out.println("Petrol");
+    }
+}
+
+class Car implements Vehicle {
+    public void start() {
+        System.out.println("Car Started");
+    }
+}
+
+public class Test {
+    public static void main(String[] args) {
+        Car car = new Car();
+        car.start();      // Output: Car Started
+        car.fuelType();   // Output: Petrol
+    }
+}
+```
+<b>Explanation:</b>
+* default void fuelType() → This is a default method with a body inside the interface.
+* Car class didn't override fuelType(), but still inherited it.
+* It helps in backward compatibility when adding new methods to an interface.
+### 12. Why is Map used in Java?
+* Map in Java is used to store data in key-value pairs.
+* It is mainly used when you want to access data based on a unique key instead of an index (like in List).
+* It is part of the Java Collections Framework and is found in java.util package.
+### 13. Internal Working of HashMap in Java ?
+* HashMap in Java is a part of the Collection Framework that stores data in key-value pairs.
+* HashMap uses a technique called Hashing.
+* Hashing converts the key into a hashcode (integer value) and creates index.
+* So every key in the map having a unique index and hashcode.
+* If Two Keys Have Same HashCode(Hash Collision), Java uses the linked list to handle the collision.</br>
+  👉 Collision occurs when two different keys generate the same hashcode and try to store their data in the same index (bucket) in the HashMap array.</br>
+  👉 Since the index is already occupied, HashMap uses LinkedList to store multiple values at the same index.
+### 14. Put below Lists of employees into a single list with 
+       Employee: id,name,address,experience
+       List<Employee> ep1 - id,name, addreess
+       List<Employee> ep2//id, experience
+   ```java
+public class MergeList {
+    public static void main(String[] args) {
+        List<Employee> ep1 = Arrays.asList(
+                new Employee(101, "John", "New York"),
+                new Employee(102, "Alice", "California"),
+                new Employee(103, "Mike", "Texas")
+        );
+
+        List<Employee> ep2 = Arrays.asList(
+                new Employee(101, 5),
+                new Employee(102, 3),
+                new Employee(103, 7)
+        );
+
+        // ✅ 🚀 One-Liner Merge Using Stream
+        List<Employee> mergedList = ep1.stream()
+                .map(e1 -> new Employee(
+                        e1.id, e1.name, e1.address,
+                        ep2.stream().filter(e2 -> e2.id == e1.id)
+                                .findFirst()
+                                .map(e2 -> e2.experience)
+                                .orElse(0)
+                ))
+                .collect(Collectors.toList());
+
+        // ✅ Print Result
+        mergedList.forEach(System.out::println);
+
+     //  ✅ 🚀 Loop-Merge
+   for (Employee e1 : ep1) {
+            Optional<Employee> matching = ep2.stream()
+                    .filter(e2 -> e2.id == e1.id)
+                    .findFirst();
+
+            if (matching.isPresent()) {
+                Employee e2 = matching.get();
+                mergedList.add(new Employee(e1.id, e1.name, e1.address, e2.experience));
+            }
+        }
+
+        // ✅ Printing the merged List
+        mergedList.forEach(System.out::println);
+    }
+  ```
+
+
+  
+
 
 
 
