@@ -412,9 +412,227 @@ Spring Boot is a powerful framework that simplifies java application development
   
 ### 16. Spring Boot Annotations ?
 * <b>@SpringBootApplication:</b> This marks the main class of the spring boot application. It combines @Configuration, @EnableAutoConfiguration and @ComponentScan annotations. </br>
-* <b>@Configutation:</b> This annotation used in the  classes.
+* <b>@Configutation:</b> The @Configuration annotation in Spring Boot is used to define beans and configuration settings for the Spring application context. It marks a class as a configuration class for defining beans.
 * <b>@ComponentScan:</b> Scans and Registers beans from specified packages.</br>
-* <b>@Bean:</b> Defines the spring bean inside the @Configuration classes.
+* <b>@Bean:</b> Defines the spring bean inside the @Configuration classes. @Bean is commonly used for creating and configuring third-party components in Spring Boot.</br>
+* <b>@Service:</b> Marks a service layer component. It includes business logics of the application.</br>
+* <b> @Autowired:</b> Used for dependency injection.</br>
+* <b>@Qualifier:</b>Specifies which bean to inject when multiple options exist.</br>
+* <b>@RestController:</b> Marks a class as a REST API controller.
+
+### 17. Why Hibernate When JPA Exists ?
+* <b>JPA:</b> JPA (Java Persistence API) is just a specification that defines how Java objects should be mapped to database tables</br>
+* <b>Hibernate:</b> Hibernate is an ORM framework that provides an actual implementation of JPA along with extra features like caching, batch processing, and custom queries.</br></br>
+
+<b>Example: Specification vs Implementation:</b></br></br>
+<b>i) JPA(Specification):</b></br>
+This is pure JPA. But it won’t work alone without an implementation.
+```java
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "employees")
+public class Employee {
+    
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    
+    private String name;
+    private String department;
+    
+    // Getters and Setters
+}
+```
+<b>ii) Hibernate (Implementation):</b></br>
+ Hibernate will handle database interactions, SQL generation, and performance optimizations.</br>
+ ```java
+spring.jpa.database-platform=org.hibernate.dialect.MySQLDialect
+spring.jpa.hibernate.ddl-auto=update
+ ```
+### 18. Explain @RequiredArgsConstructor vs @AllArgsConstructor vs @NoArgsConstructor ?
+These three annotations belong to Lombok and are used to generate constructors in Java classes.</br>
+* <b>@RequiredArgsConstructor:</b> Generates a constructor only for final and @NonNull fields in the java class. It automatically generates for constructor dependency injection.</br>
+* <b>@AllArgsConstructor:</b> Generates a constructor with all fields in the java class.</br>
+* <b>@NoArgsConstructor:</b> @NoArgsConstructor is a Lombok annotation that generates a no-argument constructor (default constructor) for a class. Allows creating an object without setting initial values.</br>
+
+All these annotations are used to reduce boilerplate code in Java applications by automatically generating constructors  at compile time.
+
+### 19. Extract the users from List<users> based on location is bangalore and age is > 35 ?
+```java
+public class FilterUsers {
+    public static void main(String[] args) {
+        List<User> users = Arrays.asList(
+            new User("Alice", "Bangalore", 40),
+            new User("Bob", "Chennai", 30),
+            new User("Charlie", "Bangalore", 38),
+            new User("David", "Hyderabad", 36),
+            new User("Eve", "Bangalore", 28)
+        );
+
+        List<User> filteredUsers = users.stream()
+            .filter(user -> "Bangalore".equalsIgnoreCase(user.getLocation()) && user.getAge() > 35)
+            .collect(Collectors.toList());
+
+        filteredUsers.forEach(System.out::println);
+    }
+}
+```
+### 20. Spring Boot Generic Exception Handling Using @ControllerAdvice ?
+@ControllerAdvice is used to handle exceptions globally across all controllers in a Spring Boot application. Instead of writing try-catch blocks in every controller, you can define a centralized error-handling mechanism.
+
+<b>Step 1: Create a Custom Exception</b></br>
+```java
+public class ResourceNotFoundException extends RuntimeException {
+    public ResourceNotFoundException(String message) {
+        super(message);
+    }
+}
+```
+<b>Step 2: Create a Global Exception Handler Using @ControllerAdvice</b>
+```java
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+@RestControllerAdvice  // Alternative to @ControllerAdvice + @ResponseBody
+public class GlobalExceptionHandler {
+
+    // Handle Specific Exception (e.g., Resource Not Found)
+    @ExceptionHandler(ResourceNotFoundException.class)
+    public ResponseEntity<String> handleResourceNotFound(ResourceNotFoundException ex) {
+        return new ResponseEntity<>(ex.getMessage(), HttpStatus.NOT_FOUND);
+    }
+
+    // Handle All Other Exceptions
+    @ExceptionHandler(Exception.class)
+    public ResponseEntity<String> handleGlobalException(Exception ex) {
+        return new ResponseEntity<>("Something went wrong: " + ex.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
+    }
+}
+```
+<b>Step 3: Throw an Exception in a Controller</b>
+```java
+import org.springframework.web.bind.annotation.*;
+
+@RestController
+@RequestMapping("/users")
+public class UserController {
+
+    @GetMapping("/{id}")
+    public String getUser(@PathVariable int id) {
+        if (id != 1) {  // Simulating a missing user
+            throw new ResourceNotFoundException("User not found with ID: " + id);
+        }
+        return "User Found";
+    }
+}
+```
+### 21. How to Secure a REST API Using Spring Security in Spring Boot?
+Spring Security helps in securing REST APIs by handling authentication and authorization efficiently.</br>
+<b>Step 1: Add Spring Security Dependency</b>
+In pom.xml, add:</br>
+```java
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-security</artifactId>
+</dependency>
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-web</artifactId>
+</dependency>
+```
+This enables Spring Security in your project.</br>
+
+<b>Step 2: Create a Security Configuration Class</b>
+We use SecurityFilterChain (recommended in Spring Boot 3) to define security rules.</br>
+```java
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.http.SessionCreationPolicy;
+import org.springframework.security.core.userdetails.User;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.provisioning.InMemoryUserDetailsManager;
+import org.springframework.security.web.SecurityFilterChain;
+
+@Configuration
+public class SecurityConfig {
+
+    @Bean
+    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+        http
+            .csrf(csrf -> csrf.disable())  // Disable CSRF for APIs
+            .authorizeHttpRequests(auth -> 
+                auth.requestMatchers("/public/**").permitAll()  // Public access
+                    .anyRequest().authenticated()  // Secure other endpoints
+            )
+            .sessionManagement(sess -> 
+                sess.sessionCreationPolicy(SessionCreationPolicy.STATELESS) // No session
+            )
+            .httpBasic();  // Enable basic authentication
+        
+        return http.build();
+    }
+
+    @Bean
+    public InMemoryUserDetailsManager userDetailsService() {
+        UserDetails user = User.withUsername("admin")
+                               .password("{noop}password") // {noop} means no password encoding
+                               .roles("USER")
+                               .build();
+        return new InMemoryUserDetailsManager(user);
+    }
+}
+```
+<b>Step 3: Create a REST Controller</b>
+```java
+import org.springframework.web.bind.annotation.*;
+
+@RestController
+@RequestMapping("/api")
+public class TestController {
+
+    @GetMapping("/public/hello")
+    public String publicHello() {
+        return "Hello, this is a public API!";
+    }
+
+    @GetMapping("/secure/hello")
+    public String secureHello() {
+        return "Hello, this is a secured API!";
+    }
+}
+```
+### 23. Which cloud provider used for deploying the application ?
+The most commonly used cloud providers are:</br></br>
+<b>AWS (Amazon Web Services) - Most Popular</b>
+* <b>Service:</b> AWS Elastic Beanstalk, EC2, ECS (Docker), Lambda (Serverless).
+* <b>Database:</b> RDS (PostgreSQL, MySQL), DynamoDB.
+* <b>Storage:</b> S3 for static assets.
+* <b>Best For:</b> Scalable and enterprise-level applications.
+
+<b>Microsoft Azure</b>
+* <b>Service:</b> Azure App Service, Azure Kubernetes Service (AKS).
+* <b>Database:</b> Azure SQL Database, CosmosDB.
+* <b>Best For:</b> Enterprises using Microsoft technologies (.NET, Windows).
+
+<b>Google Cloud Platform (GCP):</b>
+* <b>Service:</b> Google Kubernetes Engine (GKE), Cloud Run, App Engine.
+* <b>Database:</b> Cloud SQL, Firestore.
+* <b>Best For:</b> AI/ML applications, startups using Google ecosystem.
+  
+<b>Oracle Cloud:</b>
+* <b>Service:</b> Oracle Cloud Infrastructure (OCI)
+* <b>Database:</b> Oracle Autonomous DB
+* <b>Best For:</b> Applications needing Oracle database support
+
+
+
+
+
+
+
   
 
 
