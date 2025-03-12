@@ -530,7 +530,7 @@ public class UserController {
 ```
 ### 21. How to Secure a REST API Using Spring Security in Spring Boot?
 Spring Security helps in securing REST APIs by handling authentication and authorization efficiently.</br>
-<b>Step 1: Add Spring Security Dependency</b>
+<b>Step 1: Add Spring Security Dependency</b></br>
 In pom.xml, add:</br>
 ```java
 <dependency>
@@ -544,7 +544,7 @@ In pom.xml, add:</br>
 ```
 This enables Spring Security in your project.</br>
 
-<b>Step 2: Create a Security Configuration Class</b>
+<b>Step 2: Create a Security Configuration Class</b></br>
 We use SecurityFilterChain (recommended in Spring Boot 3) to define security rules.</br>
 ```java
 import org.springframework.context.annotation.Bean;
