@@ -401,8 +401,20 @@ public class MergeList {
         mergedList.forEach(System.out::println);
     }
   ```
-
-
+### 15. Advantages of Spring Boot ?
+Spring Boot is a powerful framework that simplifies java application development.</br>
+* <b>Auto-Configuration:</b> No need for manual configuration, Spring boot automatically configures the beans based on dependencies.</br>
+* <b>Embedded Servers:</b> Spring Boot comes with built-in server tomcat. Don't need to configure the server externally.</br>
+* <b>Microservice Ready:</b> Spring boot is perfect for building microservices via Spring cloud, Service discovery, API Gateway</br>
+* <b>Production Ready Features:</b> Built-in health checks, metrics and logging with Spring Boot Actuator.</br>
+* <b>Reduces Boilerplate Code:</b> Spring boot eleminates complex xml configurations.</br>
+* <b>Powerful Dependecy Management:</b> Uses spring boot starters and uses build tools like maven, gradle efficiently.
+  
+### 16. Spring Boot Annotations ?
+* <b>@SpringBootApplication:</b> This marks the main class of the spring boot application. It combines @Configuration, @EnableAutoConfiguration and @ComponentScan annotations. </br>
+* <b>@Configutation:</b> This annotation used in the  classes.
+* <b>@ComponentScan:</b> Scans and Registers beans from specified packages.</br>
+* <b>@Bean:</b> Defines the spring bean inside the @Configuration classes.
   
 
 
