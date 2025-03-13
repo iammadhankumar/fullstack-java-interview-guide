@@ -312,6 +312,7 @@ public class Test {
 * Before Java 8, interfaces could only have abstract methods (no body).
 * From Java 8, you can define default methods with a body using the default keyword.
 * We can use the default method directly without overriding it.</br>
+
 <b>Example:</b></br>
 ```java
 interface Vehicle {
