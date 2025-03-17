@@ -58,3 +58,7 @@ You can deploy the Java application on GCP using:
 *  Install Google Cloud SDK.
 *  Create a service account with required roles (IAM -> ADMIN -> Service Account).
 *  Download the JSON key file and set the env variable.
+
+### 4. How pub/sub differnt from kafka ?
+  * Google Pub/Sub is a Google-managed messaging service that automatically scales and is easy to set up.
+  * Kafka is a self-managed system that requires setup and handles large amounts of real-time data efficiently.
