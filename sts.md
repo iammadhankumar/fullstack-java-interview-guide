@@ -57,4 +57,4 @@ You can deploy the Java application on GCP using:
 ### 4.  How to set Up GCP SDK & Authentication ?
 *  Install Google Cloud SDK.
 *  Create a service account with required roles (IAM -> ADMIN -> Service Account).
-*  Download the JSON key file and set the env variable
+*  Download the JSON key file and set the env variable.
