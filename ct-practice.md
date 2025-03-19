@@ -111,3 +111,100 @@ Yes, SonarQube is a code quality and security analysis tool that helps identify 
 ### 13. Messaging Framework
 I have worked with Apache Kafka for real-time event streaming and RabbitMQ for reliable message queuing in microservices-based architectures.
 (In our e-commerce application, I used Apache Kafka to stream real-time order status updates. When a customer places an order, the order service publishes an event to Kafka. The payment service consumes this event, processes the payment.)
+
+### 14. Explain Microservices ?
+Microservices is an architectural style used to break down large applications into smaller, independent services. Each service has its own codebase.
+
+### 15. Explain about some microservices patterns ?
+<b>API Gateway Pattern:</b> The API Gateway microservices pattern acts as a single entry point for all client requests. Gateway Service act as a single entry point that gets the request from client and routing them to the appropriate microservices. It handles tasks like authentication, rate limiting, and load balancing, simplifying the communication between clients and multiple backend services.</br></br>
+<b>Circuit Breaker Pattern:</b>  The Circuit Breaker microservices pattern prevents a service from repeatedly trying to call a failing service. If a service is down or slow, the circuit "opens" to stop calls temporarily blocking any further requests to it. It helps prevent cascading failures by managing service failures.
+
+### 16. Fault tolerance mechanism in java ?
+Fault tolerance in Java ensures that an application continues to function even when unexpected failures occur.
+Java achieves this through several mechanisms:
+* <b>Try-Catch Blocks</b> – Handles exceptions gracefully without crashing the program.
+* <b>Microservices Resilience</b> – Circuit Breaker patterns (e.g., Resilience4j, Hystrix) help prevent cascading failures.
+
+### 17. How to implement fault tolerance in microservices ?
+Implementing Fault Tolerance in Microservices,
+* <b>Retry Mechanism:</b> Automatically retries a failed request before giving up. Example: Spring Retry, Resilience4j Retry.
+* <b>Circuit Breaker Pattern:</b> Stops repeated failures from overloading a system. Example: Resilience4j CircuitBreaker, Hystrix.
+* <b>Fallback Mechanism:</b> Provides an alternative response when a service is down. Example: Returning cached data or a default response.
+
+### 18. Spring actuator ?
+Spring Boot Actuator is a tool that helps monitor and manage applications in production. It provides ready-made endpoints to check the app’s health, metrics, environment, logs, and more.</br></br>
+<b>Key Features:</b>
+* <b>Health Check:</b> /actuator/health shows if the app is running fine.
+* <b>Metrics:</b> /actuator/metrics provides CPU, memory, and request stats.
+* <b>Environment Info:</b> /actuator/env shows properties and configs.
+* <b>Log Management:</b> /actuator/loggers helps manage logs at runtime.</br>
+
+It's useful for monitoring, debugging, and performance tuning in real-world applications.
+
+### 19. How to get a constant value in spring boot from  application.properties file?
+In Spring Boot, you can get a constant value from the application.properties file using @Value or @ConfigurationProperties.
+```properties
+# application.properties
+app.name=MySpringApp
+```
+
+```java
+@Value("${app.name}")
+private String appName;
+```
+### 20. Singleton Class in java ?
+A Singleton class in Java ensures that only one instance of the class exists in the JVM. It is commonly used for logging, database connections, and caching.
+```java
+public class Singleton {
+    private static Singleton instance;
+
+    private Singleton() {} // Private constructor
+
+    public static synchronized Singleton getInstance() {
+        if (instance == null) {
+            instance = new Singleton();
+        }
+        return instance;
+    }
+}
+```
+### 21. How to secure Rest API Endpoint in outside URL ? 
+* Use API Authentications like JWT, OAuth2.
+* Enabling HTTPS to avoid external attacks.
+* Restrict Access with CORS Configuration.
+
+### 22. Remove duplicate using streams ?
+```java
+//String Duplications
+  List<String> strings=List.of("hi","hello","hi","hello");
+  List<String> uniqueStrings = strings.stream().distinct().collect(Collectors.toList());
+
+//Character Duplication
+  String input = "programming";
+  String result = input.chars().distinct().mapToObj(c -> String.valueOf((char) c)).collect(Collectors.joining());
+```
+### 23. How to get employee list whose age is less than 30 using partitionby in java stream ?
+```java
+  // Partition employees based on age < 30
+     Map<Boolean, List<Employee>> partitioned = employees.stream()
+                .collect(Collectors.partitioningBy(emp -> emp.age < 30));
+
+// Get employees with age < 30
+    List<Employee> youngEmployees = partitioned.get(true);
+
+    System.out.println("Employees under 30: " + youngEmployees);
+```
+### 24. How to get list of employees for each department ?
+```java
+// Group employees by department
+ Map<String, List<Employee>> employeesByDept = employees.stream().collect(Collectors.groupingBy(emp -> emp.getDepartment()));
+```
+
+  
+
+
+
+
+
+
+
