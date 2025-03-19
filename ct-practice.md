@@ -1,8 +1,8 @@
-### 1) Java 8 features ?
+### 1. Java 8 features ?
 Java 8 introduced several key features:
 Lambda Expressions, Functional Interfaces, Method References, Stream API, Optional Class, New Date-Time API, ForEach() method, default and static methods, Collectors class.
 
-### 2) Lambda expressions ?
+### 2. Lambda expressions ?
 Lambda expression is a important feature of Java which was included in Java SE 8. It provides a clear and concise way to represent functional interfaces using an expression. It is very useful in collection library. It helps to iterate, filter and extract data from collection.
 
 ### 3. Functional interface ?
