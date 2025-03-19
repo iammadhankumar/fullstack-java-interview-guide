@@ -110,3 +110,4 @@ Yes, SonarQube is a code quality and security analysis tool that helps identify 
 
 ### 13. Messaging Framework
 I have worked with Apache Kafka for real-time event streaming and RabbitMQ for reliable message queuing in microservices-based architectures.
+(In our e-commerce application, I used Apache Kafka to stream real-time order status updates. When a customer places an order, the order service publishes an event to Kafka. The payment service consumes this event, processes the payment.)
