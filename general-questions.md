@@ -84,3 +84,17 @@ In our Spring Boot application, database calls start in the controller, which de
 
 ### 13. How do you secure your credentials ?
 We keep the database name and password safe by using environment variables and special configuration files. We also use tools like Spring Cloud Config and Vault to manage sensitive information securely without putting it directly in the code.
+
+### 14. How to you debug the particular service in microservices ?
+In a microservices environment, debugging a specific service requires a structured approach. First, I check logs using centralized tools like ELK or Splunk to identify errors. If needed, I enable debug mode and attach a debugger to step through the code execution. I also use distributed tracing tools like Jaeger to track how requests flow between services. Monitoring metrics through Prometheus and Grafana helps identify performance issues. Additionally, I test API requests using Postman and verify dependencies like databases or external APIs. This systematic approach helps quickly identify and resolve issues.
+
+### 15. how to improve performance in specific service in microservices ?
+
+To improve the performance of a specific microservice, follow these steps:</br></br>
+<b>Optimize Code & Queries:</b> Improve database queries, caching, and reduce unnecessary computations.</br>
+<b>Use Caching:</b>  Implement Redis or Memcached to reduce load on databases.</br>
+<b>Optimize API Calls:</b> Use pagination, batch processing, and async calls where needed.</br>
+<b>Increase Scaling:</b> Use auto-scaling and load balancing to handle high traffic.</br>
+<b>Optimize Resource Utilization:</b> Tune JVM, thread pools, and database connections.</br>
+<b>Enable Compression:</b> Use GZIP or Brotli for faster data transfer.</br>
+<b>Monitor & Tune:</b>  Use tools like Prometheus, Grafana, and APM tools (New Relic, Datadog) to analyze and optimize performance.</br>
