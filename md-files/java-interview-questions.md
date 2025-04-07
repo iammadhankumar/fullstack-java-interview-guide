@@ -128,6 +128,21 @@ Local variables are declared inside a method or block are accessible only with i
 A `constructor` is a special block of code that runs when an object is created. Its main purpose is to create and initialize the object. It has the same name as the class and does not have a return type. </br>
 A `method` is a regular function defined in a class that performs actions or calculations, It can be called by using the object of the class and mostly it can return value except void method.
 
+#### 16. Explain about SOLID principles in java ?
+SOLID principles are used to write clean, maintainable, and scalable code. It consists five design principles.</br>
+* <b>Single Responsibility Principle(S):</b> Every class should only have one responsibility. If a class handles multiple concerns, changes in one functionality might affect the other, making maintenance difficult.</br>
+<b>Realtime Example:</b> A bill generator class should only generate bills, not send emails.</br>
+* <b>Open/Closed Principle(O):</b> New features or behaviors should be added without changing the existing source code. This promotes safer and more maintainable code.</br>
+<b>Realtime Example:</b> New payment methods can be added without modifying the existing payment code.</br>
+* <b>Liskov Substitution Principle(L):</b> An object of a subclass should be able to replace its parent class object without causing any problems in the program.</br>
+<b>Realtime Example:</b>An electric car class should replace a regular car class without changing expected behavior like starting, stopping, or driving.</br>
+* <b>Interface Segregation Principle (I):</b>  A class should not be forced to implement methods it doesn't need.</br>
+<b>Realtime Example:</b>A simple text editor class shouldn't be forced to implement image editing functions.</br>
+*  <b>Dependency Inversion Principle (D):</b> Code should depend on interfaces or abstract classes, not on concrete classes. This makes the system flexible, decoupled, and easy to change.</br>
+<b>Realtime Example:</b>An online store class should depend on a payment gateway interface, not on a specific payment service like PayPal or Razorpay.
+
+
+
 ### Java 8 Features :
 #### 1. What are the key features introduced in Java 8 ?
 Java 8 introduced several key features: </br>
