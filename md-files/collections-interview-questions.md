@@ -94,11 +94,15 @@ ii) Using CopyOnWriteArrayList<T>
   performance in concurrent environments.
 * Unlike HashMap, it never allows null keys or values and ensures safe access during multithreaded operations.
 
-#### 3. Explain the internal working of ArrayList:
+#### 3. Explain the internal working of ArrayList ?
 * ArrayList stores elements in a dynamic array.
 * When we add the first element, it creates an internal array with a default size (usually 10). As we keep adding elements, and if the array gets full, it 
   automatically doubles its size.
 * It allows fast access by index, but adding or removing in the middle can be slower due to shifting elements.
+#### 4. Explain the internal working of LinkedList ?
+* LinkedList stores data as a chain of nodes, where each node holds the data and a reference to the next (and previous, in case of doubly linked list).
+* When we add or remove elements, it just updates the links between nodes and no shifting like in ArrayList.
+* It is better for frequent insertions or deletions, but accessing elements by index is slower because it has to traverse node by node.
   
 
 
