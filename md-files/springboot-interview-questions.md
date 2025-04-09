@@ -213,6 +213,10 @@ Here’s a brief one-line explanation for each of the main HTTP methods:
 * <b>ClassNotFoundException:</b> Occurs when an application tries to load a class by its name during runtime but the JVM cannot find it in the classpath.
 * <b>NoClassDefFoundError:</b> Occurs when a class that was available during compile time cannot be found at runtime.
 
+#### 36. Explain about bean factory and application context ?
+* <b>BeanFactory:</b> A basic container in Spring that creates and manages objects (beans) only when needed.
+* <b>ApplicationContext:</b> An advanced container in Spring that is part of bean factory and adds more features like automatic wiring, event handling, and resource management. 
+
 
 
 
