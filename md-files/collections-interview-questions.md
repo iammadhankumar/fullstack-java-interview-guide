@@ -21,7 +21,13 @@ A `HashSet` is a collection in Java that stores unique items. It doesn’t allow
 A `TreeSet` is a collection in Java that stores unique items in a sorted order. It automatically arranges the items from lowest to highest, and it doesn’t allow duplicates.
 
 #### 6. What is HashMap ?
-A `HashMap` is a collection in Java that stores key-value pairs. Each key is unique and maps to a specific value. It uses a hash table to store and quickly retrieve the elements.
+A `HashMap` is a collection in Java that stores key-value pairs. Each key is unique and maps to a specific value. 
+HashMap provides useful methods like:
+put(K key, V value) to add or update data,
+get(Object key) to fetch a value,
+remove(Object key) to delete a pair,
+containsKey(Object key) to check for a key, and
+containsValue(Object value) to check for a value.
 
 #### 7. What is TreeMap ?
 A `TreeMap` is a collection in Java that stores key-value pairs in a sorted order based on the keys. It keeps the keys in a natural ascending order and doesn’t allow duplicate keys.
@@ -74,6 +80,26 @@ We can synchronize ArrayList in two ways.</br>
 i) Using Collections.synchronizedList() method </br>
 ii) Using CopyOnWriteArrayList<T>
 
+# Internal Workings of Collections
+#### 1. Explain the internal working of hashmap ?
+* HashMap stores data as key-value pairs.
+* When we put data into a HashMap, it first checks if the internal array of buckets exists. If not, it creates one with a default size of 16. Then, it generates a 
+  hash code for the key and uses it to decide the position for inserting, reading, or removing the data.
+* If two keys produce the same hash code, which is called a hash collision, HashMap handles it using a linked list or a tree structure within the same bucket.
+  
+#### 2. Explain the internal working of concurrent hashmap ?
+* ConcurrentHashMap also stores data as key-value pairs but is designed for thread-safe operations.
+* It internally divides the map into multiple segments, allowing multiple threads to read and write without locking the whole map.
+* When a key-value pair is added, it calculates the hash and decides the bucket. Only that specific bucket is locked briefly during updates, ensuring better 
+  performance in concurrent environments.
+* Unlike HashMap, it never allows null keys or values and ensures safe access during multithreaded operations.
+
+#### 3. Explain the internal working of ArrayList:
+* ArrayList stores elements in a dynamic array.
+* When we add the first element, it creates an internal array with a default size (usually 10). As we keep adding elements, and if the array gets full, it 
+  automatically doubles its size.
+* It allows fast access by index, but adding or removing in the middle can be slower due to shifting elements.
+  
 
 
 
