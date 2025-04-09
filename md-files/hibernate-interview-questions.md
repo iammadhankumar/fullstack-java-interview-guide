@@ -52,3 +52,11 @@ The key Hibernate annotations used for mapping are,
 * Interceptors provide a way to intercept and modify the behavior of Hibernate operations, such as saving, updating, deleting, or loading entities.
 * Event listeners enable you to respond to specific events that occur during the lifecycle of entities, such as before or after an entity is inserted, updated, or deleted.
 
+#### 12. Explain about hibernate caching ?
+Hibernate caching helps store frequently accessed data in memory, so it avoids repeated database hits. This improves application performance by reducing load on the database.</br>
+
+ <b>Types of caches:</b>
+* <b>First-Level Cache:</b> It's the default cache, enabled automatically. It stores data at the session level, so repeated queries in the same session won’t hit the database again.
+* <b>Second-Level Cache:</b> It's optional and needs manual configuration, It stores data at the session factory level, making it available across multiple sessions. Useful for frequently used data like reference tables.
+* <b>Query Cache:</b> It caches the result of queries, not just the entities. It works with Second-Level Cache and helps speed up repeated complex queries.
+
