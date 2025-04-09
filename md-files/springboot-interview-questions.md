@@ -215,8 +215,10 @@ Here’s a brief one-line explanation for each of the main HTTP methods:
 
 #### 36. Explain about bean factory and application context ?
 * <b>BeanFactory:</b> A basic container in Spring that creates and manages objects (beans) only when needed.
-* <b>ApplicationContext:</b> An advanced container in Spring that is part of bean factory and adds more features like automatic wiring, event handling, and resource management. 
+* <b>ApplicationContext:</b> An advanced container in Spring that is part of bean factory and adds more features like automatic wiring, event handling, and resource management.
 
+#### 37. Explain about @Qualifier annotation ?
+@Qualifier annotation tells Spring exactly which bean to use when there are multiple beans of the same type. We pass the bean name inside the brackets.
 
 
 
