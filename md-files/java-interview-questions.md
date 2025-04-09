@@ -65,6 +65,34 @@ The string pool in Java is a special area of memory where unique string values a
 #### 7. What is difference between `==` and `equals` ?
 `==` checks if two variables are the same object(i.e., the same memory address), while `equals()` checks if they are equal in value.
 
+#### 8. How to handle memory leaks in java ?
+A memory leak in Java happens when an object is no longer needed, but the application is still holding a reference to it, so the Garbage Collector can't remove it from memory.</br>
+
+   <b>How to Prevent and Handle Memory Leaks</b></br>
+  * Avoid keeping unnecessary object references.
+  * Be careful with static variables.
+  * Always close resources like streams or database connection.
+  * We can use some tools like VisualVM (comes with JDK) and Eclipse Memory Analyzer Tool (MAT) to detect and fix memory leaks.
+#### 9.  What kind of "leaks" GC can clear automatically ?
+If an object is no longer used and there are no references pointing to it, the Garbage Collector can remove it automatically.</br>
+GC Cleans Example:
+```java
+      // Example 1: Object becomes eligible for garbage collection
+        String message = new String("Hello, Madhan!");
+        message = null; // 'message' no longer references the object
+        // At this point, the "Hello, Madhan!" string is eligible for GC
+
+        // Example 2: Object remains in memory due to active reference
+        String largeString = new String(new char[10_000_000]);
+        // 'largeString' is assigned but not used further
+        // However, it still holds a reference to the large object, so it's NOT eligible for GC
+
+        // To make 'largeString' eligible for GC, we can nullify its reference
+        largeString = null;
+        // Now, the large object can be garbage collected
+```
+
+
 ### Object-Oriented Programming :
 #### 1. Explain OOPS Concept in Java ?
 Object-Oriented Programming (OOP) in Java is a programming style that uses the classes and its objects to represent entities and ideas. Its a way of organizing code using objects. It focuses on four main concepts: encapsulation (hiding data), inheritance (sharing properties), polymorphism (using a single interface for different forms), and abstraction (simplifying complex systems).
