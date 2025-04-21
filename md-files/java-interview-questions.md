@@ -275,7 +275,15 @@ The base class of all exception classes in Java is Throwable.
 ### Multithreading :
 
 #### 1. What is a thread and what are the different stages in its lifecycle ?
-A thread in Java is a small unit of a process that runs independently within a program, allowing multiple tasks to be performed at the same time.
+A thread in Java is a small task that runs independently within a program. Threads allow multiple tasks to be performed at the same time. </br>
+<b>Different stages in thread:</b>
+* <b>New:</b> The Thread is created, but yet started. </br>
+* <b>Runnable:</b> The thread is ready to run and waiting for the system scheduler to allocate CPU time to execute it. Runnable state occurs after start() is called.</br>
+* <b>Blocked:</b> The thread is waiting for the lock that another thread is using to become available. </br>
+* <b>Waiting:</b> The thread is waiting for another thread to complete its task before it can continue. </br>
+* <b>Terminated:</b> The thread has completed its task or has been stopped.</br>
+
+
 
 #### 2. What is the difference between process and thread ?
 A process is an independent program with its own memory space, while a thread is a smaller execution unit within a process.
@@ -332,7 +340,7 @@ The lifecycle of a thread includes several stages:</br>
 <b>Runnable:</b> The thread is ready to run and waiting for CPU time.</br>
 <b>Blocked:</b> The thread is waiting for a resource to become available.</br>
 <b>Waiting:</b> The thread is waiting indefinitely for another thread to perform an action.</br>
-<b>Terminated:</b> The thread has completed its task or has been terminated.
+<b>Terminated:</b> The thread has completed its task or has been stopped.
 
 #### 16. What is thread pool ?
 A thread pool is a collection of reusable threads that are used to perform tasks. Instead of creating new threads every time for a simple tasks we can reuse the threads in thread pool. This improves the performance and efficiency. </br> </br>
