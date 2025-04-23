@@ -248,6 +248,6 @@ Lifecycle hooks in Angular are specific methods that are called at different sta
  * CurrencyPipe formats numbers as currency.
  * UpperCasePipe converts text to uppercase.​
 
-#### 18. How typescript differ fromm javascript ?
+#### 18. How typescript differ from javascript ?
 TypeScript is a programming language that builds upon JavaScript. It introduces features like static typing, allowing developers to define data types for variables and functions. This helps catch errors early and enhances code maintainability.​
 
