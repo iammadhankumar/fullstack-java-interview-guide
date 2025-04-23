@@ -167,7 +167,7 @@ Observables in Angular are a powerful mechanism for handling asynchronous operat
 * <b>Data Streams:</b> They can manage streams of data, such as real-time updates from a server.
 * <b>Powerful Operators:</b> RxJS provides a rich set of operators to transform, filter, and combine Observables.
 
-#### key features introduced in Angular versions 9 to 12?
+#### 11. key features introduced in Angular versions 9 to 12?
 
 <b><h4>Angular 9 (Feb 2020):</h4></b>
 * <b>Ivy Renderer (Default)</b> – Improved build times, smaller bundle sizes, and better debugging.  
@@ -198,3 +198,56 @@ Observables in Angular are a powerful mechanism for handling asynchronous operat
 * <b>Nullish Coalescing (`??`) in Templates</b> – More readable expressions.  
 * <b>CSS Module Support</b> – Allows importing `.css` files directly into components.  
 * <b>Webpack 5 Support</b> – Faster builds and improved module federation.  
+
+#### 12. Explain about angular component architecture ?
+An Angular application is built using different components that include HTML, TypeScript, and CSS.
+Each component has its own functionality:
+ * HTML for layout
+ * TypeScript for business logic
+ * CSS for styling</br>
+ 
+These components work together to run the full application.
+In Angular, the top-level component is the AppComponent, and other components are connected under it.
+
+#### 13. Explain Dependency injection in angular ?
+Dependency Injection in Angular is a design pattern used to inject services into components automatically.
+Angular has an injector that is responsible for creating instances of services and injecting them into components.</br>
+In angular, three types of dependency injections are there,
+* Constructor Injection --> ``ts constructor(private myService: MyService) {} ``
+* Property Injection --> ``ts @Inject(MyService) myService: MyService;``
+* Method Injection ---> ``ts someMethod(@Inject(MyService) myService: MyService) {}``
+
+#### 14. Explain about rounting in angular ?
+Routing in Angular is used to navigate between different views (or pages) without reloading the app.</br>
+To create routing in Angular:
+ * Define routes in the app-routing.module.ts or in AppModule.
+ * Configure the RouterModule in the app-routing.module.ts or in AppModule..
+ * Add routerLink in the HTML template to navigate.
+ * Use `<router-outlet>` to display the routed component.
+   
+#### 15. How to create lazy loading modules in angular ?
+Lazy-Loading modules is used to improve application performance, especially in large applications by reducing the application load times.
+These modules are loaded only when we navigate to their specific routes.</br>
+```typescript
+ const routes: Routes = [
+      {
+        path: 'products', // The route for the lazy-loaded module
+        loadChildren: () => import('./products/products.module').then(m => m.ProductsModule)
+      }
+    ];
+```
+#### 16. Explain life-cycle hooks in angular ?
+Lifecycle hooks in Angular are specific methods that are called at different stages of a component's life.</br>
+* ngOnInit() – runs after the component is initialized.
+* ngOnDestroy() – runs just before the component is destroyed.
+* ngOnChanges() – runs when input properties change in parent component
+
+#### 17. Explain pipes in angular ?
+ Pipes are used to transform data in html templates. They are used to format the data for display without altering the original data.</br>
+ * DatePipe formats dates.
+ * CurrencyPipe formats numbers as currency.
+ * UpperCasePipe converts text to uppercase.​
+
+#### 18. How typescript differ fromm javascript ?
+TypeScript is a programming language that builds upon JavaScript. It introduces features like static typing, allowing developers to define data types for variables and functions. This helps catch errors early and enhances code maintainability.​
+
