@@ -45,3 +45,10 @@ To maintain a Singleton class as thread-safe, we can use two approaches.
   
 ### 4. What is Generics in Java?
 Generics are a feature in Java that enable you to write type-safe and reusable code. They allow you to define classes, methods, and interfaces with type parameters, which can be replaced with any data type at runtime.
+
+### 5. Explain bean scopes ?
+* Singleton - singleton is a default bean scope, which is used to create single instance of the bean.
+* Prototype - A new instance of the bean created each time.
+* Request - A new bean instance is created for each HTTP request. It is typically used in web applications to store request-scoped data, such as form inputs, request parameters.
+* Session - A new bean is created for each HTTP session.  It is commonly used in web applications to store user-specific data such as login details, user preferences.
+* Application -  A single bean instance shared across entire application.  it is shared across all HTTP requests, sessions, and users.
